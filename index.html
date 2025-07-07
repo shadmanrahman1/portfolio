@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadman Rahman - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-bs-theme="dark">
+
+    <div class="d-flex">
+        <nav class="sidebar">
+            <div class="sidebar-collapsed-content">
+                <div class="notch-logo">SR</div>
+                <div class="notch-pulse"></div>
+                <div class="micro-social-icons">
+                    <a href="https://www.linkedin.com/in/shadman-rahman-offical17" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.kaggle.com/shadmanrahman1" target="_blank"><i class="fab fa-kaggle"></i></a>
+                    <a href="mailto:officialshadmanrahman@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="sidebar-full-content">
+                <div class="text-center py-4">
+                    <div class="profile-photo-container mx-auto mb-3">
+                        <img src="assets/images/profile.png" alt="Profile Photo" class="profile-photo-img">
+                    </div>
+                    <h5 class="text-white">Shadman Rahman</h5>
+                    <p class="text-white-50">Machine Learning | Deep Learning Enthusiast | Passionate About AI | Biomedical Engineering Student at KUET | Data Science |</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.linkedin.com/in/shadman-rahman-offical17" class="text-white-50 mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.kaggle.com/shadmanrahman1" class="text-white-50 mx-2" target="_blank"><i class="fab fa-kaggle"></i></a>
+                        <a href="mailto:officialshadmanrahman@gmail.com" class="text-white-50 mx-2"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:" class="text-white-50 mx-2"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#home-about">Home</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-switch-wrapper p-3 text-center">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="themeSwitch">
+                        <label class="form-check-label text-white-50" for="themeSwitch">Light Mode</label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section id="home-about" class="min-vh-100 d-flex align-items-center py-5 scroll-section">
+                <div class="container-fluid px-5">
+                    <div class="row align-items-center">
+                        <div class="col-md-6" data-aos="fade-right">
+                            <h1 class="display-3">Shadman Rahman</h1>
+                            <h2 class="typed-text"></h2>
+                            <div class="mt-4">
+                                <a href="#projects" class="btn btn-primary">View Projects</a>
+                                <a href="assets/SHADMAN_CV.pdf" class="btn btn-secondary" download>Download CV</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scroll-indicator mt-5">
+                        <p class="mb-0">Scroll Down <i class="fas fa-chevron-down"></i></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about-details" class="py-5">
+                <div class="container-fluid px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 mt-5 mb-5 mt-md-0" data-aos="fade-left">
+                            <h2 class="text-center mb-4">About Me</h2>
+                            <div class="card glassmorphism p-4 mb-4">
+                                <p>Biomedical Engineering undergraduate passionate about Data Analysis, Biomedical Signal Processing, and Machine Learning. Experienced in Python, SQL, Power BI, and collaborative project work. Eager to contribute in data-driven roles and interdisciplinary research projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-up">
+                            <h3>Languages</h3>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary language-badge">English: Fluent</span>
+                                <span class="badge bg-primary language-badge">Bangla: Native</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-up">
+                            <h3>Interests</h3>
+                            <div class="row row-cols-2 g-2 text-center">
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-lightbulb fa-3x mb-2"></i>
+                                        <p class="mb-0">Tech</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-camera fa-3x mb-2"></i>
+                                        <p class="mb-0">Photography</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-futbol fa-3x mb-2"></i>
+                                        <p class="mb-0">Sports</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-code fa-3x mb-2"></i>
+                                        <p class="mb-0">Programming</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="py-5 scroll-section">
+                <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Skills</h2>
+                    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-programming-tab" data-bs-toggle="pill" data-bs-target="#pills-programming" type="button" role="tab" aria-controls="pills-programming" aria-selected="true">Programming</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-analysis-tab" data-bs-toggle="pill" data-bs-target="#pills-analysis" type="button" role="tab" aria-controls="pills-analysis" aria-selected="false">Data Analysis</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-ml-tab" data-bs-toggle="pill" data-bs-target="#pills-ml" type="button" role="tab" aria-controls="pills-ml" aria-selected="false">ML</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-tools-tab" data-bs-toggle="pill" data-bs-target="#pills-tools" type="button" role="tab" aria-controls="pills-tools" aria-selected="false">Tools</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-apis-tab" data-bs-toggle="pill" data-bs-target="#pills-apis" type="button" role="tab" aria-controls="pills-apis" aria-selected="false">APIs</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-programming" role="tabpanel" aria-labelledby="pills-programming-tab">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fab fa-python fa-3x mb-2"></i>
+                                        <p class="mb-0">Python</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-calculator fa-3x mb-2"></i>
+                                        <p class="mb-0">MATLAB</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-code fa-3x mb-2"></i>
+                                        <p class="mb-0">C</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fab fa-html5 fa-3x mb-2"></i>
+                                        <p class="mb-0">HTML</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fab fa-js-square fa-3x mb-2"></i>
+                                        <p class="mb-0">JavaScript</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-analysis" role="tabpanel" aria-labelledby="pills-analysis-tab">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-chart-bar fa-3x mb-2"></i>
+                                        <p class="mb-0">Power BI</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-database fa-3x mb-2"></i>
+                                        <p class="mb-0">SQL</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-table fa-3x mb-2"></i>
+                                        <p class="mb-0">Pandas</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-table fa-3x mb-2"></i>
+                                        <p class="mb-0">NumPy</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-chart-line fa-3x mb-2"></i>
+                                        <p class="mb-0">Matplotlib</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-chart-line fa-3x mb-2"></i>
+                                        <p class="mb-0">Seaborn</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-ml" role="tabpanel" aria-labelledby="pills-ml-tab">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-brain fa-3x mb-2"></i>
+                                        <p class="mb-0">Scikit-learn</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-cube fa-3x mb-2"></i>
+                                        <p class="mb-0">TensorFlow</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-cogs fa-3x mb-2"></i>
+                                        <p class="mb-0">Supervised & Unsupervised Learning</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-thumbs-up fa-3x mb-2"></i>
+                                        <p class="mb-0">Recommenders</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-robot fa-3x mb-2"></i>
+                                        <p class="mb-0">Reinforcement Learning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-tools" role="tabpanel" aria-labelledby="pills-tools-tab">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fab fa-git-square fa-3x mb-2"></i>
+                                        <p class="mb-0">Git</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-pencil-ruler fa-3x mb-2"></i>
+                                        <p class="mb-0">SolidWorks</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-file-alt fa-3x mb-2"></i>
+                                        <p class="mb-0">MS Office</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-laptop-code fa-3x mb-2"></i>
+                                        <p class="mb-0">VS Code</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-server fa-3x mb-2"></i>
+                                        <p class="mb-0">MySQL Workbench</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-code-branch fa-3x mb-2"></i>
+                                        <p class="mb-0">Streamlit</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-apis" role="tabpanel" aria-labelledby="pills-apis-tab">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-exchange-alt fa-3x mb-2"></i>
+                                        <p class="mb-0">REST</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-code fa-3x mb-2"></i>
+                                        <p class="mb-0">BeautifulSoup</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-bolt fa-3x mb-2"></i>
+                                        <p class="mb-0">FastAPI</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="py-5 scroll-section">
+                 <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-img"></div>
+                            <div class="timeline-content glassmorphism">
+                                <h5>Project Executive</h5>
+                                <p class="text-muted">10 Minute School | 2023-2024</p>
+                                <p>Contributed to content assurance and review for digital educational materials</p>
+                                <p>Collaborated with a team of 10+ members to maintain content quality</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-img"></div>
+                            <div class="timeline-content glassmorphism">
+                                <h5>IT & Resource Executive</h5>
+                                <p class="text-muted">KUET Career Club | 2023-Present</p>
+                                <p>Organized career development seminars and networking events</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-img"></div>
+                            <div class="timeline-content glassmorphism">
+                                <h5>Script Evaluator</h5>
+                                <p class="text-muted">Udvash | 2022-2023</p>
+                                <p>Evaluated academic scripts and managed class material logistics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="py-5 scroll-section">
+                 <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Education</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Khulna University of Engineering & Technology (KUET)</h5>
+                                    <p class="card-text">BSc in Biomedical Engineering | 2023-Present</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Savar Cantonment Public College</h5>
+                                    <p class="card-text">HSC | 2019-2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-center my-5">Certifications</h3>
+                    <div id="certCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card glassmorphism">
+                                    <div class="card-body text-center">
+                                        <div class="cert-placeholder mx-auto mb-3">Certification</div>
+                                        <h5 class="card-title">IBM</h5>
+                                        <p class="card-text">Data Science Professional Certificate</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card glassmorphism">
+                                    <div class="card-body text-center">
+                                        <div class="cert-placeholder mx-auto mb-3">Certification</div>
+                                        <h5 class="card-title">DeepLearning.AI</h5>
+                                        <p class="card-text">AI for Everyone</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#certCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#certCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="py-5 scroll-section">
+                 <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Projects</h2>
+                    <div class="row" data-masonry='{"percentPosition": true }'>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism" data-aos="fade-up">
+                                <div class="project-placeholder card-img-top">Project Preview</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Sales Dashboard</h5>
+                                    <p class="card-text">KPI visualization using Power BI.</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism" data-aos="fade-up">
+                                <div class="project-placeholder card-img-top">Project Preview</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Disease Prediction System</h5>
+                                    <p class="card-text">ML models showcase.</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism" data-aos="fade-up">
+                                <div class="project-placeholder card-img-top">Project Preview</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Kaggle Competitions</h5>
+                                    <p class="card-text">Titanic & House Price.</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="py-5 scroll-section">
+                <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Gallery</h2>
+                    <div class="text-center mb-4">
+                        <button class="btn btn-primary filter-button" data-filter="all">All</button>
+                        <button class="btn btn-outline-primary filter-button" data-filter="certifications">Certifications</button>
+                        <button class="btn btn-outline-primary filter-button" data-filter="projects">Projects</button>
+                        <button class="btn btn-outline-primary filter-button" data-filter="events">Events</button>
+                    </div>
+                    <div class="row gallery-grid">
+                        <div class="col-md-4 gallery-item certifications">
+                            <img src="https://via.placeholder.com/400x300.png?text=IBM+Certificate" class="img-fluid" alt="IBM Certificate">
+                        </div>
+                        <div class="col-md-4 gallery-item projects">
+                            <img src="https://via.placeholder.com/400x300.png?text=Sales+Dashboard" class="img-fluid" alt="Sales Dashboard">
+                        </div>
+                        <div class="col-md-4 gallery-item events">
+                            <img src="https://via.placeholder.com/400x300.png?text=KUET+Career+Club+Event" class="img-fluid" alt="KUET Career Club Event">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cv" class="py-5 scroll-section">
+                <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">My CV</h2>
+                    <div class="card glassmorphism p-4">
+                        <iframe src="assets/SHADMAN_CV.pdf" style="width: 100%; height: 500px; border: none;"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-5 pb-5 scroll-section">
+                 <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Contact</h2>
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card p-4" data-aos="fade-up">
+                                <h5>Contact Information</h5>
+                                <div class="row row-cols-1 row-cols-md-3 g-3 mt-4">
+                                    <div class="col">
+                                        <div class="contact-social-item p-3 text-center">
+                                            <a href="https://www.linkedin.com/in/shadman-rahman-offical17" target="_blank" class="text-white-50 d-block">
+                                                <i class="fab fa-linkedin fa-2x mb-2"></i>
+                                                <p class="mb-0">Shadman Rahman</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="contact-social-item p-3 text-center">
+                                            <a href="mailto:officialshadmanrahman@gmail.com" class="text-white-50 d-block">
+                                                <i class="fas fa-envelope fa-2x mb-2"></i>
+                                                <p class="mb-0">officialshadmanrahman@gmail.com</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="contact-social-item p-3 text-center">
+                                            <a href="tel:" class="text-white-50 d-block">
+                                                <i class="fas fa-phone fa-2x mb-2"></i>
+                                                <p class="mb-0"></p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <script src="main.js"></script>
+</body>
+</html>
