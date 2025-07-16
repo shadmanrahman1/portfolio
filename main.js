@@ -5,33 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hide loading screen once everything is loaded
     window.addEventListener('load', () => {
         setTimeout(() => {
-            loadingScreen.style.opacity = '0';
-            loadingScreen.style.transition = 'opacity 0.3s ease-out';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 300);
-        }, 200); // Reduced from 800ms to 200ms for faster perceived loading
+            if (loadingScreen) {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transition = 'opacity 0.5s ease-out';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }
+        }, 500); // More conservative timing
     });
 
-    // Initialize AOS with optimized settings
-    AOS.init({
-        duration: 600, // Reduced from 800ms
-        easing: 'ease-out', // Faster easing
-        once: true, // Animate only once for performance
-        mirror: false,
-        offset: 50, // Trigger animations earlier
-        delay: 0 // Remove delays
-    });
+    // Initialize AOS safely
+    if (typeof AOS !== 'undefined') {
+        AOS.init();
+    }
 
-    // Optimized Typed.js animation
-    new Typed('.typed-text', {
-        strings: ["Machine Learning Developer", "Data Science Enthusiast", "Biomedical Engineer", "Python Developer", "AI Enthusiast"],
-        typeSpeed: 60,
-        backSpeed: 40,
-        backDelay: 2000,
-        loop: true,
-        smartBackspace: true
-    });
+    // Typed.js animation safely
+    if (typeof Typed !== 'undefined') {
+        new Typed('.typed-text', {
+            strings: ["Machine Learning Developer", "Data Science Enthusiast", "Biomedical Engineer", "Python Developer", "AI Enthusiast"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2000,
+            loop: true,
+            smartBackspace: true
+        });
+    }
 
     // Theme switcher
     const themeSwitch = document.getElementById('themeSwitch');
