@@ -1,3 +1,21 @@
+/* Performance optimizations */
+* {
+    box-sizing: border-box;
+}
+
+/* Reduce layout shifts */
+img, video {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Improve font rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 :root {
     --dark-blue-bg: #0a0a0a; /* Very dark, almost black */
     --light-blue-accent: #00FFFF;
@@ -46,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    color: transparent; /* Fallback for non-webkit browsers */
     text-shadow: 0 0 2px var(--light-blue-accent); /* Added for visibility */
 }
 
@@ -325,7 +343,6 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: unset;
     background-clip: unset;
     -webkit-text-fill-color: var(--dark-text);
-    text-fill-color: var(--dark-text);
     text-shadow: none; /* Ensure no lingering shadows */
 }
 
@@ -392,7 +409,6 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: unset;
     background-clip: unset;
     -webkit-text-fill-color: var(--dark-text);
-    text-fill-color: var(--dark-text);
 }
 
 [data-bs-theme="light"] .notch-pulse {
@@ -410,7 +426,6 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
     -webkit-text-fill-color: var(--dark-text) !important;
-    text-fill-color: var(--dark-text) !important;
     text-shadow: none !important;
 }
 

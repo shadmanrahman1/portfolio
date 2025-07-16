@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shadman Rahman - Biomedical Engineering student passionate about Data Science, Machine Learning, and Healthcare Technology. Explore my portfolio showcasing innovative projects and technical expertise.">
-    <meta name="keywords" content="Shadman Rahman, Biomedical Engineering, Data Science, Machine Learning, Python, Portfolio, KUET, Healthcare Technology">
+    <meta name="description" content="Shadman Rahman - Biomedical Engineering student passionate about Data Science, Machine Learning, and AI. Explore my portfolio showcasing innovative projects and technical expertise.">
+    <meta name="keywords" content="Shadman Rahman, Biomedical Engineering, Data Science, Machine Learning, Python, Portfolio, KUET, AI, Deep Learning, LangChain, FAISS">
     <meta name="author" content="Shadman Rahman">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00FFFF">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Shadman Rahman - Portfolio">
-    <meta property="og:description" content="Biomedical Engineering student passionate about Data Science, Machine Learning, and Healthcare Technology">
+    <meta property="og:title" content="Shadman Rahman - AI & Data Science Portfolio">
+    <meta property="og:description" content="Biomedical Engineering student passionate about Data Science, Machine Learning, and AI. Featured projects: Biomed RAG Chatbot, Disease Prediction System, Manim Math Animator.">
     <meta property="og:image" content="assets/images/profile.png">
     <meta property="og:url" content="https://shadmanrahman1.github.io/portfolio">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shadman Rahman Portfolio">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Shadman Rahman - Portfolio">
-    <meta name="twitter:description" content="Biomedical Engineering student passionate about Data Science, Machine Learning, and Healthcare Technology">
+    <meta name="twitter:title" content="Shadman Rahman - AI & Data Science Portfolio">
+    <meta name="twitter:description" content="Biomedical Engineering student passionate about Data Science, Machine Learning, and AI. Explore innovative projects and technical expertise.">
     <meta name="twitter:image" content="assets/images/profile.png">
+    <meta name="twitter:creator" content="@shadmanrahman1">
     
     <title>Shadman Rahman - Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -28,6 +43,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body data-bs-theme="dark">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable btn btn-primary position-absolute" style="top: 10px; left: 10px; z-index: 10000;">Skip to main content</a>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="position-fixed w-100 h-100 d-flex align-items-center justify-content-center" style="background: linear-gradient(45deg, #0a0a0a, #1a1a1a); z-index: 9999;">
+        <div class="text-center">
+            <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <h5 class="text-light">Loading Portfolio...</h5>
+        </div>
+    </div>
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav d-md-none">
@@ -125,7 +152,7 @@
             </div>
         </nav>
 
-        <main class="main-content">
+        <main class="main-content" id="main-content" role="main">
             <section id="home-about" class="min-vh-100 d-flex align-items-center py-5 scroll-section">
                 <div class="container-fluid px-5">
                     <div class="row align-items-center">
@@ -160,11 +187,77 @@
                         <div class="col-md-8 mt-5 mb-5 mt-md-0" data-aos="fade-left">
                             <h2 class="text-center mb-4">About Me</h2>
                             <div class="card glassmorphism p-4 mb-4">
-                                <p class="mb-3">Passionate Biomedical Engineering undergraduate with a strong foundation in Data Science, Machine Learning, and Biomedical Signal Processing. Currently pursuing my degree at Khulna University of Engineering & Technology (KUET), I combine technical expertise with a deep understanding of healthcare applications.</p>
+                                <div class="row align-items-center mb-4">
+                                    <div class="col-12">
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-primary fs-6 px-3 py-2">🎯 Biomedical Engineer • AI Enthusiast • Data Science Specialist</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 
-                                <p class="mb-3">My experience spans across multiple domains including Python programming, SQL databases, Power BI visualization, and collaborative project development. I've successfully developed innovative solutions like biomed RAG chatbots and disease prediction systems, demonstrating my ability to bridge the gap between technology and healthcare.</p>
+                                <p class="lead mb-4 text-center fst-italic">
+                                    "Bridging the gap between cutting-edge technology and healthcare innovation through data-driven solutions."
+                                </p>
                                 
-                                <p class="mb-0">I am eager to contribute to data-driven roles and interdisciplinary research projects that leverage technology to improve healthcare outcomes and advance medical understanding.</p>
+                                <div class="row g-4">
+                                    <div class="col-md-4 text-center">
+                                        <div class="h-100">
+                                            <i class="fas fa-heartbeat fa-2x text-primary mb-3"></i>
+                                            <h6 class="fw-bold">Healthcare Focus</h6>
+                                            <p class="small mb-0">Biomedical Engineering student at KUET with specialized knowledge in medical signal processing and healthcare applications.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="h-100">
+                                            <i class="fas fa-brain fa-2x text-primary mb-3"></i>
+                                            <h6 class="fw-bold">AI & ML Expertise</h6>
+                                            <p class="small mb-0">Proficient in Python, TensorFlow, LangChain, and advanced ML algorithms with hands-on experience in real-world projects.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="h-100">
+                                            <i class="fas fa-chart-line fa-2x text-primary mb-3"></i>
+                                            <h6 class="fw-bold">Data Science</h6>
+                                            <p class="small mb-0">Expert in data analysis, visualization, and business intelligence using Power BI, SQL, and statistical modeling.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <hr class="my-4">
+                                
+                                <div class="text-center">
+                                    <h6 class="fw-bold mb-3">� Featured Projects</h6>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-robot text-primary me-2"></i>
+                                                <small>Developed Biomed RAG Chatbot with NLP</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-stethoscope text-primary me-2"></i>
+                                                <small>Built Disease Prediction ML System</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-calculator text-primary me-2"></i>
+                                                <small>Created Manim Math Animation Chatbot</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-medal text-primary me-2"></i>
+                                                <small>Multiple ML/AI Certifications</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <p class="mb-0 fw-semibold text-primary">Ready to contribute to innovative healthcare solutions and data-driven research projects.</p>
+                                </div>
                                 
                                 <div class="row mt-4">
                                     <div class="col-md-6">
@@ -252,7 +345,7 @@
                                         <source src="assets/sinx_demo.mp4" type="video/mp4">
                                     </video>
                                     <div class="position-absolute top-50 start-50 translate-middle">
-                                        <i class="fas fa-play-circle fa-3x text-primary" style="opacity: 0.8; cursor: pointer;" onclick="this.parentElement.previousElementSibling.play(); this.style.display='none';"></i>
+                                        <i class="fas fa-play-circle fa-3x text-primary" style="opacity: 0.8; cursor: pointer;" onclick="this.parentElement.previousElementSibling.play(); this.style.display='none';" aria-label="Play video demonstration"></i>
                                     </div>
                                 </div>
                                 <div class="card-body d-flex flex-column">

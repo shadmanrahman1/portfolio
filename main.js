@@ -1,14 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Loading screen animation
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    // Hide loading screen once everything is loaded
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 800); // Show loading for at least 800ms for better UX
+    });
 
-    // Initialize AOS
-    AOS.init();
+    // Initialize AOS with optimized settings
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true, // Animate only once for performance
+        mirror: false
+    });
 
-    // Typed.js animation
+    // Optimized Typed.js animation
     new Typed('.typed-text', {
-        strings: ["Machine Learning Developer", "Data Science Enthusiast", "Biomedical Engineer", "Python Developer"],
-        typeSpeed: 50,
-        backSpeed: 50,
-        loop: true
+        strings: ["Machine Learning Developer", "Data Science Enthusiast", "Biomedical Engineer", "Python Developer", "AI Enthusiast"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        backDelay: 2000,
+        loop: true,
+        smartBackspace: true
     });
 
     // Theme switcher
@@ -200,4 +220,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Error handling for external resources
+    window.addEventListener('error', function(e) {
+        console.warn('Resource failed to load:', e.target);
+    });
+
+    // Performance monitoring (optional)
+    if ('performance' in window) {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart + 'ms');
+            }, 0);
+        });
+    }
 });
