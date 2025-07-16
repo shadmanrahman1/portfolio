@@ -6,19 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
         setTimeout(() => {
             loadingScreen.style.opacity = '0';
-            loadingScreen.style.transition = 'opacity 0.5s ease-out';
+            loadingScreen.style.transition = 'opacity 0.3s ease-out';
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
-            }, 500);
-        }, 800); // Show loading for at least 800ms for better UX
+            }, 300);
+        }, 200); // Reduced from 800ms to 200ms for faster perceived loading
     });
 
     // Initialize AOS with optimized settings
     AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
+        duration: 600, // Reduced from 800ms
+        easing: 'ease-out', // Faster easing
         once: true, // Animate only once for performance
-        mirror: false
+        mirror: false,
+        offset: 50, // Trigger animations earlier
+        delay: 0 // Remove delays
     });
 
     // Optimized Typed.js animation
