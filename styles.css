@@ -228,8 +228,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-img {
     height: 200px;
-    object-fit: cover;
+    object-fit: contain !important;
+    object-position: center center !important;
     border-bottom: 2px solid var(--light-blue-accent);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    transition: all 0.3s ease;
 }
 
 .project-placeholder {
@@ -1333,4 +1337,337 @@ h1, h2, h3, h4, h5, h6 {
 [data-bs-theme="light"] .modal-video {
     box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
     border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+/* Enhanced Button Interactions */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Button hover and active states */
+.btn, button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover, button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+.btn:active, button:active {
+    transform: scale(0.98);
+}
+
+/* Enhanced Video Controls */
+.video-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--light-blue-accent);
+    font-size: 2rem;
+    z-index: 10;
+}
+
+.video-message {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    z-index: 10;
+    display: none;
+    animation: fadeInOut 1.5s ease;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Video wrapper enhancements */
+.position-relative video {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.position-relative video:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+/* Enhanced Modal Animations */
+@keyframes modalSlideIn {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Enhanced Project Image Styling */
+.project-img-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(57, 255, 20, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    padding: 15px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Dark mode project image styling */
+[data-bs-theme="dark"] .project-img {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+}
+
+[data-bs-theme="dark"] .project-img:hover {
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.4);
+}
+
+/* Light mode project image styling */
+[data-bs-theme="light"] .project-img-container {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(40, 167, 69, 0.1));
+}
+
+[data-bs-theme="light"] .project-img {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="light"] .project-img:hover {
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
+}
+
+/* Enhanced Project Cards - SIMPLIFIED TO FIX FLOATING */
+.project-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Loading states for external links */
+a[target="_blank"] {
+    transition: all 0.3s ease;
+}
+
+a[target="_blank"]:hover {
+    color: var(--light-blue-accent) !important;
+    text-decoration: underline;
+}
+
+/* Enhanced skill cards */
+.skill-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(57, 255, 20, 0.1));
+    border: 1px solid var(--light-blue-accent);
+}
+
+/* Form enhancements */
+form input:focus, form textarea:focus {
+    border-color: var(--light-blue-accent);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    outline: none;
+}
+
+.btn-success {
+    background-color: var(--neon-green-accent) !important;
+    border-color: var(--neon-green-accent) !important;
+    color: #000 !important;
+}
+
+/* Accessibility improvements */
+.btn:focus, button:focus, a:focus {
+    outline: 2px solid var(--light-blue-accent);
+    outline-offset: 2px;
+}
+
+/* Performance optimizations - DISABLED TO FIX FLOATING ISSUES */
+/* .project-card, .skill-card, .btn, button, video {
+    will-change: transform;
+} */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced loading screen */
+#loading-screen {
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease-out;
+}
+
+/* Parallax container */
+.parallax-container {
+    overflow: hidden;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+    .btn, button {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        min-height: 44px;
+    }
+    
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .skill-card:hover {
+        transform: scale(1.02);
+    }
+}
+
+/* Dark mode specific enhancements */
+[data-bs-theme="dark"] .video-message {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="light"] .video-message {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+/* Notification animations */
+@keyframes slideInNotification {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification {
+    animation: slideInNotification 0.3s ease-out;
+}
+
+/* Toast Notifications */
+.toast-info {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.9), rgba(0, 123, 255, 0.9));
+    color: white;
+}
+
+.toast-success {
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.9), rgba(40, 167, 69, 0.9));
+    color: white;
+}
+
+.toast-error {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.9), rgba(220, 53, 69, 0.9));
+    color: white;
+}
+
+.toast-warning {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.9), rgba(255, 143, 0, 0.9));
+    color: #000;
+}
+
+.toast {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Project overlay animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Enhanced project overlay styling */
+.project-overlay {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.project-overlay > div {
+    background: linear-gradient(135deg, 
+        rgba(var(--bs-body-bg-rgb), 0.95) 0%, 
+        rgba(var(--bs-body-bg-rgb), 0.9) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 
+        0 25px 80px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Enhanced glassmorphism effect */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-bs-theme="dark"] .glassmorphism {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }

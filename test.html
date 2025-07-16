@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Test</title>
+    <script>
+        console.log('Test page loaded');
+        
+        function testFunction() {
+            alert('Button clicked! JavaScript is working.');
+            console.log('Test button clicked');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+            
+            document.getElementById('testBtn2').addEventListener('click', function() {
+                alert('Event listener working!');
+                console.log('Event listener button clicked');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>JavaScript & Button Test</h1>
+    <button onclick="testFunction()">Test Button 1 (inline onclick)</button>
+    <br><br>
+    <button id="testBtn2">Test Button 2 (event listener)</button>
+    <br><br>
+    <a href="#" onclick="alert('Link clicked'); return false;">Test Link</a>
+    <br><br>
+    <p>Open browser console (F12) to see logs</p>
+</body>
+</html>
