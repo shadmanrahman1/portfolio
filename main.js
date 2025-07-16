@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Typed.js animation
     new Typed('.typed-text', {
-        strings: ["Data Analyst", "Machine Learning Engineer", "Biomedical Engineering Student"],
+        strings: ["Machine Learning Developer", "Data Science Enthusiast", "Biomedical Engineer", "Python Developer"],
         typeSpeed: 50,
         backSpeed: 50,
         loop: true
@@ -13,32 +13,123 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme switcher
     const themeSwitch = document.getElementById('themeSwitch');
-    themeSwitch.addEventListener('change', () => {
-        if (themeSwitch.checked) {
-            document.body.setAttribute('data-bs-theme', 'light');
-        } else {
+    const mobileThemeSwitch = document.getElementById('mobileThemeSwitch');
+    
+    // Function to handle theme change
+    function changeTheme(isDark) {
+        if (isDark) {
             document.body.setAttribute('data-bs-theme', 'dark');
+        } else {
+            document.body.setAttribute('data-bs-theme', 'light');
         }
+        // Sync both switches
+        themeSwitch.checked = !isDark;
+        if (mobileThemeSwitch) {
+            mobileThemeSwitch.checked = isDark;
+        }
+    }
+    
+    // Desktop theme switch
+    themeSwitch.addEventListener('change', () => {
+        changeTheme(!themeSwitch.checked);
     });
+    
+    // Mobile theme switch
+    if (mobileThemeSwitch) {
+        mobileThemeSwitch.addEventListener('change', () => {
+            changeTheme(mobileThemeSwitch.checked);
+        });
+    }
+    
+    // Set initial mobile theme switch state
+    if (mobileThemeSwitch) {
+        mobileThemeSwitch.checked = true; // Default to dark mode
+    }
 
-    // Gallery filtering
-    // Gallery filtering
-    const filterButtons = document.querySelectorAll('.filter-button');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-                if (filter === 'all' || item.classList.contains(filter)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
+    // Mobile navigation smooth scroll
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    // Close the offcanvas menu
+                    const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu'));
+                    if (offcanvas) {
+                        offcanvas.hide();
+                    }
+                    // Smooth scroll to target
+                    setTimeout(() => {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
                 }
-            });
+            }
         });
     });
+
+    // Mobile-specific optimizations
+    if (window.innerWidth <= 768) {
+        // Disable AOS animations on mobile for better performance
+        document.querySelectorAll('[data-aos]').forEach(element => {
+            element.removeAttribute('data-aos');
+        });
+        
+        // Optimize carousel for mobile
+        const carousel = document.querySelector('#certCarousel');
+        if (carousel) {
+            // Enable touch swiping for carousel
+            carousel.addEventListener('touchstart', handleTouchStart, false);
+            carousel.addEventListener('touchmove', handleTouchMove, false);
+            
+            let xDown = null;
+            let yDown = null;
+            
+            function handleTouchStart(evt) {
+                const firstTouch = evt.touches[0];
+                xDown = firstTouch.clientX;
+                yDown = firstTouch.clientY;
+            }
+            
+            function handleTouchMove(evt) {
+                if (!xDown || !yDown) {
+                    return;
+                }
+                
+                let xUp = evt.touches[0].clientX;
+                let yUp = evt.touches[0].clientY;
+                
+                let xDiff = xDown - xUp;
+                let yDiff = yDown - yUp;
+                
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    if (xDiff > 0) {
+                        // Swipe left - next slide
+                        bootstrap.Carousel.getInstance(carousel).next();
+                    } else {
+                        // Swipe right - previous slide
+                        bootstrap.Carousel.getInstance(carousel).prev();
+                    }
+                }
+                
+                xDown = null;
+                yDown = null;
+            }
+        }
+    }
+
+    // Prevent zoom on double tap for iOS
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
 
     // Sidebar dynamic behavior
     const sidebar = document.querySelector('.sidebar');
@@ -96,6 +187,17 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 
-    
-
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });

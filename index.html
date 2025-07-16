@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shadman Rahman - Biomedical Engineering student passionate about Data Science, Machine Learning, and Healthcare Technology. Explore my portfolio showcasing innovative projects and technical expertise.">
+    <meta name="keywords" content="Shadman Rahman, Biomedical Engineering, Data Science, Machine Learning, Python, Portfolio, KUET, Healthcare Technology">
+    <meta name="author" content="Shadman Rahman">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shadman Rahman - Portfolio">
+    <meta property="og:description" content="Biomedical Engineering student passionate about Data Science, Machine Learning, and Healthcare Technology">
+    <meta property="og:image" content="assets/images/profile.png">
+    <meta property="og:url" content="https://shadmanrahman1.github.io/portfolio">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shadman Rahman - Portfolio">
+    <meta name="twitter:description" content="Biomedical Engineering student passionate about Data Science, Machine Learning, and Healthcare Technology">
+    <meta name="twitter:image" content="assets/images/profile.png">
+    
     <title>Shadman Rahman - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -11,6 +28,57 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body data-bs-theme="dark">
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav d-md-none">
+        <div class="mobile-nav-content">
+            <div class="mobile-brand">
+                <span class="mobile-logo">SR</span>
+                <span class="mobile-name">Shadman Rahman</span>
+            </div>
+            <button class="mobile-nav-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Off-canvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <div class="mobile-profile">
+                <img src="assets/images/profile.png" alt="Profile Photo" class="mobile-profile-img">
+                <div>
+                    <h6 class="mb-0">Shadman Rahman</h6>
+                    <small class="text-muted">ML & Data Science</small>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mobile-nav-list">
+                <li><a href="#home-about" class="mobile-nav-link" data-bs-dismiss="offcanvas"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#projects" class="mobile-nav-link" data-bs-dismiss="offcanvas"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#experience" class="mobile-nav-link" data-bs-dismiss="offcanvas"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#skills" class="mobile-nav-link" data-bs-dismiss="offcanvas"><i class="fas fa-cogs"></i> Skills</a></li>
+                <li><a href="#education" class="mobile-nav-link" data-bs-dismiss="offcanvas"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#achievements" class="mobile-nav-link" data-bs-dismiss="offcanvas"><i class="fas fa-trophy"></i> Achievements</a></li>
+                <li><a href="#contact" class="mobile-nav-link" data-bs-dismiss="offcanvas"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-theme-switch">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="mobileThemeSwitch">
+                    <label class="form-check-label" for="mobileThemeSwitch">Dark Mode</label>
+                </div>
+            </div>
+            <div class="mobile-social-links">
+                <a href="https://linkedin.com/in/shadmanrahman1" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/shadmanrahman1" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:officialshadmanrahman@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
 
     <div class="d-flex">
         <nav class="sidebar">
@@ -41,10 +109,11 @@
                 <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link" href="#home-about">Home</a></li>
                     
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 <div class="theme-switch-wrapper p-3 text-center">
@@ -64,13 +133,23 @@
                             <h1 class="display-3">Shadman Rahman</h1>
                             <h2 class="typed-text"></h2>
                             <div class="mt-4">
-                                <a href="#projects" class="btn btn-primary">View Projects</a>
-                                <a href="assets/SHADMAN_CV.pdf" class="btn btn-secondary" download>Download CV</a>
+                                <a href="#projects" class="btn btn-primary btn-lg me-2">
+                                    <i class="fas fa-code me-2"></i>View My Projects
+                                </a>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Download CV
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="assets/SHADMAN_CV.pdf" download><i class="fas fa-file-pdf me-2"></i>PDF Format</a></li>
+                                        <li><a class="dropdown-item" href="assets/Shadman_Rahman_CV.docx" download><i class="fas fa-file-word me-2"></i>Word Format</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="scroll-indicator mt-5">
-                        <p class="mb-0">Scroll Down <i class="fas fa-chevron-down"></i></p>
+                        <p class="mb-0">Explore My Projects Below <i class="fas fa-chevron-down"></i></p>
                     </div>
                 </div>
             </section>
@@ -81,7 +160,22 @@
                         <div class="col-md-8 mt-5 mb-5 mt-md-0" data-aos="fade-left">
                             <h2 class="text-center mb-4">About Me</h2>
                             <div class="card glassmorphism p-4 mb-4">
-                                <p>Biomedical Engineering undergraduate passionate about Data Analysis, Biomedical Signal Processing, and Machine Learning. Experienced in Python, SQL, Power BI, and collaborative project work. Eager to contribute in data-driven roles and interdisciplinary research projects.</p>
+                                <p class="mb-3">Passionate Biomedical Engineering undergraduate with a strong foundation in Data Science, Machine Learning, and Biomedical Signal Processing. Currently pursuing my degree at Khulna University of Engineering & Technology (KUET), I combine technical expertise with a deep understanding of healthcare applications.</p>
+                                
+                                <p class="mb-3">My experience spans across multiple domains including Python programming, SQL databases, Power BI visualization, and collaborative project development. I've successfully developed innovative solutions like biomed RAG chatbots and disease prediction systems, demonstrating my ability to bridge the gap between technology and healthcare.</p>
+                                
+                                <p class="mb-0">I am eager to contribute to data-driven roles and interdisciplinary research projects that leverage technology to improve healthcare outcomes and advance medical understanding.</p>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <h6><i class="fas fa-graduation-cap me-2"></i>Education</h6>
+                                        <p class="small mb-2">BSc in Biomedical Engineering<br>Khulna University of Engineering & Technology</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6><i class="fas fa-map-marker-alt me-2"></i>Location</h6>
+                                        <p class="small mb-2">Khulna, Bangladesh</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,6 +220,140 @@
                 </div>
             </section>
 
+            <section id="projects" class="py-5 scroll-section">
+                 <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Projects</h2>
+                    <div class="row" data-masonry='{"percentPosition": true }'>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism project-card" data-aos="fade-up">
+                                <img src="assets/images/Biomed Chatbot.png" class="card-img-top project-img" alt="Biomed RAG Chatbot">
+                                <div class="card-body">
+                                    <h5 class="card-title">Biomed RAG Chatbot</h5>
+                                    <p class="card-text">An intelligent chatbot system designed for biomedical inquiries, utilizing natural language processing to provide accurate medical information and assistance.</p>
+                                    <div class="project-tech mb-2">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">NLP</span>
+                                        <span class="badge bg-primary me-1">Streamlit</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#biomedChatbotModal">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism project-card" data-aos="fade-up">
+                                <div class="position-relative card-img-top" style="height: 200px; overflow: hidden;">
+                                    <video 
+                                        class="w-100 h-100" 
+                                        style="object-fit: cover;" 
+                                        muted 
+                                        loop 
+                                        preload="metadata"
+                                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23000'/%3E%3Ctext x='200' y='100' text-anchor='middle' fill='%2300ffff' font-size='24'%3ESin(x) Animation%3C/text%3E%3C/svg%3E">
+                                        <source src="assets/sinx_demo.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play-circle fa-3x text-primary" style="opacity: 0.8; cursor: pointer;" onclick="this.parentElement.previousElementSibling.play(); this.style.display='none';"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Manim Math Animator Chatbot</h5>
+                                    <p class="card-text">AI-powered mathematical animation chatbot that transforms equations like "animate sin(x)" or "visualize y = x²" into stunning mathematical videos using Manim and advanced LLMs.</p>
+                                    <div class="project-tech mb-2">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">Manim</span>
+                                        <span class="badge bg-primary me-1">DeepSeek Coder</span>
+                                        <span class="badge bg-primary me-1">AI Chatbot</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#manimProjectModal">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism project-card" data-aos="fade-up">
+                                <img src="assets/images/Disease_Prediction_system.png" class="card-img-top project-img" alt="Disease Prediction System">
+                                <div class="card-body">
+                                    <h5 class="card-title">Disease Prediction System</h5>
+                                    <p class="card-text">A machine learning-based system that predicts diseases based on symptoms and patient data, helping in early diagnosis and medical decision-making.</p>
+                                    <div class="project-tech mb-2">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">Scikit-learn</span>
+                                        <span class="badge bg-primary me-1">Machine Learning</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#diseasePredictionModal">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism project-card" data-aos="fade-up">
+                                <div class="project-placeholder card-img-top">
+                                    <i class="fab fa-kaggle fa-4x text-primary"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Kaggle Competitions</h5>
+                                    <p class="card-text">Participated in various Kaggle competitions including Titanic survival prediction and House price prediction, demonstrating data science skills.</p>
+                                    <div class="project-tech mb-2">
+                                        <span class="badge bg-primary me-1">Python</span>
+                                        <span class="badge bg-primary me-1">Pandas</span>
+                                        <span class="badge bg-primary me-1">Data Analysis</span>
+                                    </div>
+                                    <a href="https://www.kaggle.com/shadmanrahman1" class="btn btn-primary" target="_blank">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 mb-4">
+                            <div class="card glassmorphism project-card" data-aos="fade-up">
+                                <div class="project-placeholder card-img-top">
+                                    <i class="fas fa-chart-bar fa-4x text-primary"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Sales Dashboard</h5>
+                                    <p class="card-text">Interactive Power BI dashboard for sales KPI visualization, providing insights into sales performance and trends for business intelligence.</p>
+                                    <div class="project-tech mb-2">
+                                        <span class="badge bg-primary me-1">Power BI</span>
+                                        <span class="badge bg-primary me-1">SQL</span>
+                                        <span class="badge bg-primary me-1">Data Visualization</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="py-5 scroll-section">
+                 <div class="container-fluid px-5">
+                    <h2 class="text-center mb-5">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-img"></div>
+                            <div class="timeline-content glassmorphism">
+                                <h5>Project Executive</h5>
+                                <p class="text-muted">10 Minute School | 2023-2024</p>
+                                <p>Contributed to content assurance and review for digital educational materials</p>
+                                <p>Collaborated with a team of 10+ members to maintain content quality</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-img"></div>
+                            <div class="timeline-content glassmorphism">
+                                <h5>IT & Resource Executive</h5>
+                                <p class="text-muted">KUET Career Club | 2023-Present</p>
+                                <p>Organized career development seminars and networking events</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-img"></div>
+                            <div class="timeline-content glassmorphism">
+                                <h5>Script Evaluator</h5>
+                                <p class="text-muted">Udvash | 2022-2023</p>
+                                <p>Evaluated academic scripts and managed class material logistics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="skills" class="py-5 scroll-section">
                 <div class="container-fluid px-5">
                     <h2 class="text-center mb-5">Skills</h2>
@@ -137,7 +365,7 @@
                             <button class="nav-link" id="pills-analysis-tab" data-bs-toggle="pill" data-bs-target="#pills-analysis" type="button" role="tab" aria-controls="pills-analysis" aria-selected="false">Data Analysis</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-ml-tab" data-bs-toggle="pill" data-bs-target="#pills-ml" type="button" role="tab" aria-controls="pills-ml" aria-selected="false">ML</button>
+                            <button class="nav-link" id="pills-ml-tab" data-bs-toggle="pill" data-bs-target="#pills-ml" type="button" role="tab" aria-controls="pills-ml" aria-selected="false">Machine Learning</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-tools-tab" data-bs-toggle="pill" data-bs-target="#pills-tools" type="button" role="tab" aria-controls="pills-tools" aria-selected="false">Tools</button>
@@ -237,6 +465,24 @@
                                 </div>
                                 <div class="col">
                                     <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-link fa-3x mb-2"></i>
+                                        <p class="mb-0">LangChain</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-search fa-3x mb-2"></i>
+                                        <p class="mb-0">FAISS</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
+                                        <i class="fas fa-face-smile fa-3x mb-2"></i>
+                                        <p class="mb-0">Hugging Face</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-3 border bg-light skill-card glassmorphism">
                                         <i class="fas fa-cogs fa-3x mb-2"></i>
                                         <p class="mb-0">Supervised & Unsupervised Learning</p>
                                     </div>
@@ -321,39 +567,6 @@
                 </div>
             </section>
 
-            <section id="experience" class="py-5 scroll-section">
-                 <div class="container-fluid px-5">
-                    <h2 class="text-center mb-5">Experience</h2>
-                    <div class="timeline">
-                        <div class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-img"></div>
-                            <div class="timeline-content glassmorphism">
-                                <h5>Project Executive</h5>
-                                <p class="text-muted">10 Minute School | 2023-2024</p>
-                                <p>Contributed to content assurance and review for digital educational materials</p>
-                                <p>Collaborated with a team of 10+ members to maintain content quality</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-img"></div>
-                            <div class="timeline-content glassmorphism">
-                                <h5>IT & Resource Executive</h5>
-                                <p class="text-muted">KUET Career Club | 2023-Present</p>
-                                <p>Organized career development seminars and networking events</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-img"></div>
-                            <div class="timeline-content glassmorphism">
-                                <h5>Script Evaluator</h5>
-                                <p class="text-muted">Udvash | 2022-2023</p>
-                                <p>Evaluated academic scripts and managed class material logistics</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section id="education" class="py-5 scroll-section">
                  <div class="container-fluid px-5">
                     <h2 class="text-center mb-5">Education</h2>
@@ -377,22 +590,411 @@
                     </div>
                     <h3 class="text-center my-5">Certifications</h3>
                     <div id="certCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
-                        <div class="carousel-inner">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                            <button type="button" data-bs-target="#certCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                        </div>
+                        <div class="carousel-inner cert-multi-carousel">
+                            <!-- Slide 1: ML, DL, IBM -->
                             <div class="carousel-item active">
-                                <div class="card glassmorphism">
-                                    <div class="card-body text-center">
-                                        <div class="cert-placeholder mx-auto mb-3">Certification</div>
-                                        <h5 class="card-title">IBM</h5>
-                                        <p class="card-text">Data Science Professional Certificate</p>
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=ML" class="cert-badge" alt="ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Machine Learning Specialization</h5>
+                                                <p class="text-muted">Stanford University & Coursera</p>
+                                                <p class="card-text">Complete 3-course specialization covering supervised learning, advanced algorithms, and unsupervised learning.</p>
+                                                <a href="assets/certificates/Machine Learning Specialization.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=DL" class="cert-badge" alt="Deep Learning Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Neural Networks & Deep Learning</h5>
+                                                <p class="text-muted">DeepLearning.AI</p>
+                                                <p class="card-text">Comprehensive course on neural networks, deep learning fundamentals, and practical implementation.</p>
+                                                <a href="assets/certificates/Neural Networks and Deep Learning by Deeplearning_AI.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=IBM" class="cert-badge" alt="IBM Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">IBM Machine Learning</h5>
+                                                <p class="text-muted">IBM SkillsBuild</p>
+                                                <p class="card-text">Professional machine learning certification covering industry best practices and real-world applications.</p>
+                                                <a href="assets/certificates/IBM Machine Learning.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Slide 2: DL, IBM, DATA -->
                             <div class="carousel-item">
-                                <div class="card glassmorphism">
-                                    <div class="card-body text-center">
-                                        <div class="cert-placeholder mx-auto mb-3">Certification</div>
-                                        <h5 class="card-title">DeepLearning.AI</h5>
-                                        <p class="card-text">AI for Everyone</p>
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=DL" class="cert-badge" alt="Deep Learning Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Neural Networks & Deep Learning</h5>
+                                                <p class="text-muted">DeepLearning.AI</p>
+                                                <p class="card-text">Comprehensive course on neural networks, deep learning fundamentals, and practical implementation.</p>
+                                                <a href="assets/certificates/Neural Networks and Deep Learning by Deeplearning_AI.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=IBM" class="cert-badge" alt="IBM Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">IBM Machine Learning</h5>
+                                                <p class="text-muted">IBM SkillsBuild</p>
+                                                <p class="card-text">Professional machine learning certification covering industry best practices and real-world applications.</p>
+                                                <a href="assets/certificates/IBM Machine Learning.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=DATA" class="cert-badge" alt="Data Analysis Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Data Analysis with Python</h5>
+                                                <p class="text-muted">IBM</p>
+                                                <p class="card-text">Advanced data manipulation, analysis, and visualization using Python, Pandas, and statistical methods.</p>
+                                                <a href="assets/certificates/Data Analysis with Python.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3: IBM, DATA, ADV -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=IBM" class="cert-badge" alt="IBM Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">IBM Machine Learning</h5>
+                                                <p class="text-muted">IBM SkillsBuild</p>
+                                                <p class="card-text">Professional machine learning certification covering industry best practices and real-world applications.</p>
+                                                <a href="assets/certificates/IBM Machine Learning.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=DATA" class="cert-badge" alt="Data Analysis Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Data Analysis with Python</h5>
+                                                <p class="text-muted">IBM</p>
+                                                <p class="card-text">Advanced data manipulation, analysis, and visualization using Python, Pandas, and statistical methods.</p>
+                                                <a href="assets/certificates/Data Analysis with Python.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=ADV" class="cert-badge" alt="Advanced Algorithms Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Advanced Learning Algorithms</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Advanced machine learning algorithms, neural networks, and decision trees implementation.</p>
+                                                <a href="assets/certificates/Coursera Advanced Learning Algorithm.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 4: DATA, ADV, SQL -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=DATA" class="cert-badge" alt="Data Analysis Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Data Analysis with Python</h5>
+                                                <p class="text-muted">IBM</p>
+                                                <p class="card-text">Advanced data manipulation, analysis, and visualization using Python, Pandas, and statistical methods.</p>
+                                                <a href="assets/certificates/Data Analysis with Python.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=ADV" class="cert-badge" alt="Advanced Algorithms Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Advanced Learning Algorithms</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Advanced machine learning algorithms, neural networks, and decision trees implementation.</p>
+                                                <a href="assets/certificates/Coursera Advanced Learning Algorithm.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=SQL" class="cert-badge" alt="SQL Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">SQL with Python</h5>
+                                                <p class="text-muted">Coursera</p>
+                                                <p class="card-text">Database management, complex queries, and data integration using SQL with Python programming.</p>
+                                                <a href="assets/certificates/Coursera SQL with Python.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 5: ADV, SQL, SUP -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=ADV" class="cert-badge" alt="Advanced Algorithms Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Advanced Learning Algorithms</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Advanced machine learning algorithms, neural networks, and decision trees implementation.</p>
+                                                <a href="assets/certificates/Coursera Advanced Learning Algorithm.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=SQL" class="cert-badge" alt="SQL Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">SQL with Python</h5>
+                                                <p class="text-muted">Coursera</p>
+                                                <p class="card-text">Database management, complex queries, and data integration using SQL with Python programming.</p>
+                                                <a href="assets/certificates/Coursera SQL with Python.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=SUP" class="cert-badge" alt="Supervised ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Supervised Machine Learning</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Fundamental supervised learning techniques including regression and classification algorithms.</p>
+                                                <a href="assets/certificates/Supervised_ML.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 6: SQL, SUP, UNSUP -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=SQL" class="cert-badge" alt="SQL Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">SQL with Python</h5>
+                                                <p class="text-muted">Coursera</p>
+                                                <p class="card-text">Database management, complex queries, and data integration using SQL with Python programming.</p>
+                                                <a href="assets/certificates/Coursera SQL with Python.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=SUP" class="cert-badge" alt="Supervised ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Supervised Machine Learning</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Fundamental supervised learning techniques including regression and classification algorithms.</p>
+                                                <a href="assets/certificates/Supervised_ML.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=UNSUP" class="cert-badge" alt="Unsupervised ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Unsupervised Learning & Recommenders</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Clustering, dimensionality reduction, and recommendation systems implementation.</p>
+                                                <a href="assets/certificates/Unsupervised, Recommenders, Reinforcement Learning.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 7: SUP, UNSUP, HYPER -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=SUP" class="cert-badge" alt="Supervised ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Supervised Machine Learning</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Fundamental supervised learning techniques including regression and classification algorithms.</p>
+                                                <a href="assets/certificates/Supervised_ML.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=UNSUP" class="cert-badge" alt="Unsupervised ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Unsupervised Learning & Recommenders</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Clustering, dimensionality reduction, and recommendation systems implementation.</p>
+                                                <a href="assets/certificates/Unsupervised, Recommenders, Reinforcement Learning.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=HYPER" class="cert-badge" alt="Hyperparameter Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Deep Neural Networks Optimization</h5>
+                                                <p class="text-muted">DeepLearning.AI</p>
+                                                <p class="card-text">Hyperparameter tuning, regularization, and optimization techniques for deep networks.</p>
+                                                <a href="assets/certificates/Improving Deep Neural Network Hyperparameter Tuning, Regularization and Optimization.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 8: UNSUP, HYPER, ML -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=UNSUP" class="cert-badge" alt="Unsupervised ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Unsupervised Learning & Recommenders</h5>
+                                                <p class="text-muted">Coursera & Stanford</p>
+                                                <p class="card-text">Clustering, dimensionality reduction, and recommendation systems implementation.</p>
+                                                <a href="assets/certificates/Unsupervised, Recommenders, Reinforcement Learning.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=HYPER" class="cert-badge" alt="Hyperparameter Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Deep Neural Networks Optimization</h5>
+                                                <p class="text-muted">DeepLearning.AI</p>
+                                                <p class="card-text">Hyperparameter tuning, regularization, and optimization techniques for deep networks.</p>
+                                                <a href="assets/certificates/Improving Deep Neural Network Hyperparameter Tuning, Regularization and Optimization.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=ML" class="cert-badge" alt="ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Machine Learning Specialization</h5>
+                                                <p class="text-muted">Stanford University & Coursera</p>
+                                                <p class="card-text">Complete 3-course specialization covering supervised learning, advanced algorithms, and unsupervised learning.</p>
+                                                <a href="assets/certificates/Machine Learning Specialization.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 9: HYPER, ML, DL -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=HYPER" class="cert-badge" alt="Hyperparameter Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Deep Neural Networks Optimization</h5>
+                                                <p class="text-muted">DeepLearning.AI</p>
+                                                <p class="card-text">Hyperparameter tuning, regularization, and optimization techniques for deep networks.</p>
+                                                <a href="assets/certificates/Improving Deep Neural Network Hyperparameter Tuning, Regularization and Optimization.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=ML" class="cert-badge" alt="ML Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Machine Learning Specialization</h5>
+                                                <p class="text-muted">Stanford University & Coursera</p>
+                                                <p class="card-text">Complete 3-course specialization covering supervised learning, advanced algorithms, and unsupervised learning.</p>
+                                                <a href="assets/certificates/Machine Learning Specialization.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="card glassmorphism cert-detail-card h-100">
+                                            <div class="cert-badge-container">
+                                                <img src="https://via.placeholder.com/100x100.png?text=DL" class="cert-badge" alt="Deep Learning Badge">
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">Neural Networks & Deep Learning</h5>
+                                                <p class="text-muted">DeepLearning.AI</p>
+                                                <p class="card-text">Comprehensive course on neural networks, deep learning fundamentals, and practical implementation.</p>
+                                                <a href="assets/certificates/Neural Networks and Deep Learning by Deeplearning_AI.pdf" target="_blank" class="btn btn-outline-primary btn-sm">View Certificate</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -409,62 +1011,93 @@
                 </div>
             </section>
 
-            <section id="projects" class="py-5 scroll-section">
-                 <div class="container-fluid px-5">
-                    <h2 class="text-center mb-5">Projects</h2>
-                    <div class="row" data-masonry='{"percentPosition": true }'>
-                        <div class="col-sm-6 col-lg-4 mb-4">
-                            <div class="card glassmorphism" data-aos="fade-up">
-                                <div class="project-placeholder card-img-top">Project Preview</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Sales Dashboard</h5>
-                                    <p class="card-text">KPI visualization using Power BI.</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 mb-4">
-                            <div class="card glassmorphism" data-aos="fade-up">
-                                <div class="project-placeholder card-img-top">Project Preview</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Disease Prediction System</h5>
-                                    <p class="card-text">ML models showcase.</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 mb-4">
-                            <div class="card glassmorphism" data-aos="fade-up">
-                                <div class="project-placeholder card-img-top">Project Preview</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Kaggle Competitions</h5>
-                                    <p class="card-text">Titanic & House Price.</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="gallery" class="py-5 scroll-section">
+            <section id="achievements" class="py-5 scroll-section">
                 <div class="container-fluid px-5">
-                    <h2 class="text-center mb-5">Gallery</h2>
-                    <div class="text-center mb-4">
-                        <button class="btn btn-primary filter-button" data-filter="all">All</button>
-                        <button class="btn btn-outline-primary filter-button" data-filter="certifications">Certifications</button>
-                        <button class="btn btn-outline-primary filter-button" data-filter="projects">Projects</button>
-                        <button class="btn btn-outline-primary filter-button" data-filter="events">Events</button>
-                    </div>
-                    <div class="row gallery-grid">
-                        <div class="col-md-4 gallery-item certifications">
-                            <img src="https://via.placeholder.com/400x300.png?text=IBM+Certificate" class="img-fluid" alt="IBM Certificate">
+                    <h2 class="text-center mb-5">Achievements & Certifications</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100 achievement-card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="achievement-icon me-3">
+                                        <i class="fas fa-graduation-cap fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Machine Learning Specialization</h5>
+                                        <p class="card-text mb-0">Comprehensive 3-course specialization covering supervised learning, advanced algorithms, and unsupervised learning by Andrew Ng.</p>
+                                        <small class="text-muted">Stanford University & Coursera</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4 gallery-item projects">
-                            <img src="https://via.placeholder.com/400x300.png?text=Sales+Dashboard" class="img-fluid" alt="Sales Dashboard">
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100 achievement-card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="achievement-icon me-3">
+                                        <i class="fas fa-brain fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Deep Learning Specialization</h5>
+                                        <p class="card-text mb-0">Neural Networks, Deep Learning, and advanced optimization techniques including hyperparameter tuning and regularization.</p>
+                                        <small class="text-muted">DeepLearning.AI</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4 gallery-item events">
-                            <img src="https://via.placeholder.com/400x300.png?text=KUET+Career+Club+Event" class="img-fluid" alt="KUET Career Club Event">
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100 achievement-card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="achievement-icon me-3">
+                                        <i class="fas fa-chart-line fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Data Analysis with Python</h5>
+                                        <p class="card-text mb-0">Advanced data manipulation, analysis, and visualization using Python, Pandas, NumPy, and statistical methods.</p>
+                                        <small class="text-muted">IBM</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100 achievement-card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="achievement-icon me-3">
+                                        <i class="fas fa-database fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">SQL for Data Science</h5>
+                                        <p class="card-text mb-0">Database management, complex queries, and data integration techniques using SQL with Python.</p>
+                                        <small class="text-muted">Coursera</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100 achievement-card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="achievement-icon me-3">
+                                        <i class="fab fa-kaggle fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Kaggle Contributor</h5>
+                                        <p class="card-text mb-0">Active participant in machine learning competitions including Titanic and House Price prediction challenges.</p>
+                                        <small class="text-muted">Kaggle Platform</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up">
+                            <div class="card glassmorphism h-100 achievement-card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="achievement-icon me-3">
+                                        <i class="fas fa-users fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Leadership Roles</h5>
+                                        <p class="card-text mb-0">IT & Resource Executive at KUET Career Club and Project Executive at 10 Minute School.</p>
+                                        <small class="text-muted">Professional Experience</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -473,8 +1106,20 @@
             <section id="cv" class="py-5 scroll-section">
                 <div class="container-fluid px-5">
                     <h2 class="text-center mb-5">My CV</h2>
-                    <div class="card glassmorphism p-4">
-                        <iframe src="assets/SHADMAN_CV.pdf" style="width: 100%; height: 500px; border: none;"></iframe>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="card glassmorphism p-4">
+                                <div class="text-center mb-3">
+                                    <a href="assets/SHADMAN_CV.pdf" class="btn btn-primary me-2" download>
+                                        <i class="fas fa-download me-2"></i>Download PDF CV
+                                    </a>
+                                    <a href="assets/Shadman_Rahman_CV.docx" class="btn btn-outline-primary" download>
+                                        <i class="fas fa-file-word me-2"></i>Download Word CV
+                                    </a>
+                                </div>
+                                <iframe src="assets/SHADMAN_CV.pdf" style="width: 100%; height: 500px; border: none; border-radius: 8px;"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -519,6 +1164,153 @@
             </section>
 
         </main>
+    </div>
+
+    <!-- Project Modals -->
+    <!-- Biomed RAG Chatbot Modal -->
+    <div class="modal fade" id="biomedChatbotModal" tabindex="-1" aria-labelledby="biomedChatbotModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="biomedChatbotModalLabel">Biomed RAG Chatbot</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/Biomed Chatbot.png" class="img-fluid mb-3" alt="Biomed RAG Chatbot">
+                    <h6>Project Overview</h6>
+                    <p>An intelligent chatbot system specifically designed for biomedical inquiries. This application utilizes advanced natural language processing techniques to understand user queries and provide accurate medical information and assistance.</p>
+                    
+                    <h6>Key Features</h6>
+                    <ul>
+                        <li>Natural Language Processing for medical query understanding</li>
+                        <li>Comprehensive medical knowledge base</li>
+                        <li>User-friendly Streamlit interface</li>
+                        <li>Real-time response generation</li>
+                        <li>Context-aware conversation handling</li>
+                    </ul>
+                    
+                    <h6>Technologies Used</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-primary">Python</span>
+                        <span class="badge bg-primary">Natural Language Processing</span>
+                        <span class="badge bg-primary">Streamlit</span>
+                        <span class="badge bg-primary">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disease Prediction System Modal -->
+    <div class="modal fade" id="diseasePredictionModal" tabindex="-1" aria-labelledby="diseasePredictionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="diseasePredictionModalLabel">Disease Prediction System</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/Disease_Prediction_system.png" class="img-fluid mb-3" alt="Disease Prediction System">
+                    <h6>Project Overview</h6>
+                    <p>A sophisticated machine learning-based system that predicts potential diseases based on patient symptoms and historical data. This system assists healthcare professionals in early diagnosis and medical decision-making processes.</p>
+                    
+                    <h6>Key Features</h6>
+                    <ul>
+                        <li>Symptom-based disease prediction using ML algorithms</li>
+                        <li>Multiple classification models for improved accuracy</li>
+                        <li>Data preprocessing and feature engineering</li>
+                        <li>Model evaluation and performance metrics</li>
+                        <li>User-friendly interface for healthcare professionals</li>
+                    </ul>
+                    
+                    <h6>Technologies Used</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-primary">Python</span>
+                        <span class="badge bg-primary">Scikit-learn</span>
+                        <span class="badge bg-primary">Pandas</span>
+                        <span class="badge bg-primary">Machine Learning</span>
+                        <span class="badge bg-primary">Data Analysis</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manim Math Animator Chatbot Modal -->
+    <div class="modal fade" id="manimProjectModal" tabindex="-1" aria-labelledby="manimProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="manimProjectModalLabel">Manim Math Animator Chatbot (2025)</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <video 
+                            class="w-100" 
+                            controls 
+                            style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);"
+                            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='%23000'/%3E%3Ctext x='400' y='200' text-anchor='middle' fill='%2300ffff' font-size='32'%3ESin(x) Mathematical Animation Demo%3C/text%3E%3C/svg%3E">
+                            <source src="assets/sinx_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-center mt-2 text-muted"><small>Live demonstration: "animate sin(x)" command result</small></p>
+                    </div>
+                    <h6>Project Overview</h6>
+                    <p>An intelligent AI chatbot that transforms mathematical equations into stunning animated visualizations. Simply chat with natural language prompts like "animate sin(x)", "show me y = x²", or "visualize the derivative of cos(x)" and watch as the system generates professional mathematical animations using Manim and advanced language models.</p>
+                    
+                    <h6>Smart Features</h6>
+                    <ul>
+                        <li><strong>Conversational Interface:</strong> Natural language processing for mathematical requests</li>
+                        <li><strong>Equation Intelligence:</strong> Understands complex functions like sin(x), cos(x), tan(x), polynomials, logarithms</li>
+                        <li><strong>Dynamic Animations:</strong> Creates smooth mathematical transformations and visualizations</li>
+                        <li><strong>Video Generation:</strong> Exports high-quality MP4 videos ready for presentations</li>
+                        <li><strong>Code Generation:</strong> Powered by DeepSeek Coder for precise Manim code creation</li>
+                        <li><strong>Mathematical Concepts:</strong> Visualizes calculus, algebra, trigonometry, and advanced topics</li>
+                    </ul>
+                    
+                    <h6>Example Prompts</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><code>"animate sin(x) from 0 to 2π"</code> ⭐ <span class="badge bg-success">Demo Above</span></li>
+                                <li><code>"show y = x² transformation"</code></li>
+                                <li><code>"visualize e^x growth"</code></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><code>"derivative of cos(x)"</code></li>
+                                <li><code>"plot log(x) vs ln(x)"</code></li>
+                                <li><code>"animate Fourier series"</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h6>Technologies Used</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-primary">Python</span>
+                        <span class="badge bg-primary">Manim</span>
+                        <span class="badge bg-primary">DeepSeek Coder</span>
+                        <span class="badge bg-primary">AI Chatbot</span>
+                        <span class="badge bg-primary">NLP</span>
+                        <span class="badge bg-primary">Mathematical Visualization</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="document.querySelector('#manimProjectModal video').currentTime=0; document.querySelector('#manimProjectModal video').play();">
+                        <i class="fas fa-play me-2"></i>Replay Demo
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
