@@ -86,6 +86,30 @@ h1, h2, h3, h4, h5, h6 {
     width: var(--sidebar-width); /* Expanded width */
 }
 
+/* Hide full content when sidebar is collapsed */
+.sidebar-full-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.sidebar.expanded .sidebar-full-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Show collapsed content when sidebar is collapsed */
+.sidebar-collapsed-content {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.sidebar.expanded .sidebar-collapsed-content {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .main-content {
     margin-left: 60px; /* Initial margin for collapsed sidebar - matches new width */
     padding: 0; /* Increased padding for visible margins */
@@ -144,16 +168,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
     color: var(--text-light);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    position: relative;
+    display: block;
 }
 
 .nav-link:hover {
     color: var(--light-blue-accent);
     text-shadow: 0 0 5px var(--light-blue-accent);
+    background-color: rgba(0, 255, 255, 0.1);
+    transform: translateX(5px);
 }
 
 .nav-link.active {
     color: var(--light-blue-accent);
     text-shadow: 0 0 5px var(--light-blue-accent);
+    background-color: rgba(0, 255, 255, 0.15);
+    border-left: 3px solid var(--light-blue-accent);
+    transform: translateX(5px);
+    font-weight: 600;
 }
 
 .timeline {
@@ -267,22 +303,6 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid rgba(0, 255, 255, 0.3);
 }
 
-/* CV Section Styling */
-#cv .card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
-}
-
-#cv iframe {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease;
-}
-
-#cv iframe:hover {
-    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
-}
-
 /* Dropdown Menu Styling */
 .dropdown-menu {
     background-color: rgba(26, 26, 26, 0.95);
@@ -381,6 +401,15 @@ h1, h2, h3, h4, h5, h6 {
 [data-bs-theme="light"] .nav-link:hover {
     color: var(--light-blue-accent);
     text-shadow: none;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+[data-bs-theme="light"] .nav-link.active {
+    color: var(--light-blue-accent);
+    text-shadow: none;
+    background-color: rgba(0, 123, 255, 0.15);
+    border-left: 3px solid var(--light-blue-accent);
+    font-weight: 600;
 }
 
 [data-bs-theme="light"] .timeline::before {
@@ -417,6 +446,86 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-bs-theme="light"] .notch-pulse {
     background-color: var(--dark-text);
+}
+
+/* Typing Animation Effect */
+.typing-container {
+    display: inline-block;
+    position: relative;
+}
+
+.typing-text {
+    font-weight: 600;
+    background: linear-gradient(45deg, var(--light-blue-accent), var(--neon-green-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: none;
+}
+
+.typing-cursor {
+    display: inline-block;
+    background-color: var(--light-blue-accent);
+    margin-left: 3px;
+    width: 3px;
+    animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes erasing {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+.typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    border-right: 3px solid var(--light-blue-accent);
+    animation: typing 3s steps(30) forwards;
+}
+
+.typing-text.erasing {
+    animation: erasing 1.5s steps(30) forwards;
+}
+
+.typing-text.typing {
+    animation: typing 3s steps(30) forwards;
+}
+
+/* Light mode typing animation */
+[data-bs-theme="light"] .typing-text {
+    background: linear-gradient(45deg, var(--medium-blue-accent), #28a745);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-right-color: var(--medium-blue-accent);
+}
+
+[data-bs-theme="light"] .typing-cursor {
+    background-color: var(--medium-blue-accent);
+}
+
+/* Responsive typing animation */
+@media (max-width: 768px) {
+    .typing-text {
+        font-size: 1.2rem;
+        border-right-width: 2px;
+    }
+    
+    .typing-cursor {
+        width: 2px;
+    }
 }
 
 /* Scroll Indicator */
@@ -1670,4 +1779,85 @@ html {
 [data-bs-theme="dark"] .glassmorphism {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Sidebar Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide desktop sidebar on mobile */
+    }
+    
+    .main-content {
+        margin-left: 0 !important; /* Remove margin on mobile */
+    }
+    
+    .main-content.shifted {
+        margin-left: 0 !important; /* Remove margin even when shifted class exists */
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-nav {
+        display: none !important; /* Hide mobile nav on desktop */
+    }
+}
+
+/* Improved sidebar animation performance */
+.sidebar {
+    will-change: width;
+}
+
+.main-content {
+    will-change: margin-left;
+}
+
+.nav-link {
+    will-change: transform, background-color;
+}
+
+/* Enhanced sidebar visual indicators */
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, var(--light-blue-accent), transparent);
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.expanded::before {
+    opacity: 1;
+}
+
+/* Visual indicator for auto-expanded state */
+.sidebar.auto-expanded::after {
+    content: '📌';
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 12px;
+    opacity: 0.7;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* Scroll indicator for expanded sidebar */
+.sidebar.expanded .nav-link.active::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    width: 3px;
+    height: 100%;
+    background: var(--light-blue-accent);
+    transform: translateY(-50%);
+    border-radius: 0 2px 2px 0;
 }

@@ -5,6 +5,9 @@ console.log('Simple script loaded');
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM ready - starting simple initialization');
     
+    // Initialize typing animation
+    initTypingAnimation();
+    
     // 0. FIX PROJECT IMAGE CENTERING + ANIMATIONS
     const style = document.createElement('style');
     style.textContent = `
@@ -117,20 +120,190 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 1.5. SIDEBAR FUNCTIONALITY
+    // 1.5. ENHANCED SIDEBAR FUNCTIONALITY
     const sidebar = document.querySelector('.sidebar');
-    if (sidebar) {
+    const mainContent = document.querySelector('.main-content');
+    const sidebarNavLinks = document.querySelectorAll('.sidebar .nav-link');
+    let isScrollExpanded = false;
+    let isHoverExpanded = false;
+
+    // Check if device is mobile/tablet
+    function isMobileDevice() {
+        return window.innerWidth <= 768;
+    }
+
+    if (sidebar && mainContent && !isMobileDevice()) {
+        // Function to expand sidebar
+        function expandSidebar(source) {
+            if (isMobileDevice()) return; // Prevent on mobile
+            
+            sidebar.classList.add('expanded');
+            mainContent.classList.add('shifted');
+            if (source === 'scroll') {
+                isScrollExpanded = true;
+                console.log('Sidebar expanded by scroll');
+            } else if (source === 'hover') {
+                isHoverExpanded = true;
+                console.log('Sidebar expanded by hover');
+            }
+        }
+
+        // Function to collapse sidebar
+        function collapseSidebar(source) {
+            if (isMobileDevice()) return; // Prevent on mobile
+            
+            if (source === 'scroll') {
+                isScrollExpanded = false;
+            } else if (source === 'hover') {
+                isHoverExpanded = false;
+            }
+
+            // Only collapse if both scroll and hover are false
+            if (!isScrollExpanded && !isHoverExpanded) {
+                sidebar.classList.remove('expanded');
+                mainContent.classList.remove('shifted');
+                console.log('Sidebar collapsed');
+            }
+        }
+
         // Expand sidebar on hover
         sidebar.addEventListener('mouseenter', function() {
-            this.classList.add('expanded');
-            console.log('Sidebar expanded');
+            expandSidebar('hover');
         });
         
-        // Collapse sidebar when mouse leaves
+        // Collapse sidebar when mouse leaves (but check scroll state)
         sidebar.addEventListener('mouseleave', function() {
-            this.classList.remove('expanded');
-            console.log('Sidebar collapsed');
+            collapseSidebar('hover');
         });
+
+        // Scroll detection for auto-expand
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateSidebarOnScroll() {
+            if (isMobileDevice()) return; // Skip on mobile
+            
+            const currentScrollY = window.scrollY;
+            const homeSection = document.querySelector('#home-about');
+            const homeSectionHeight = homeSection ? homeSection.offsetHeight : 600;
+
+            // Auto-expand when scrolling past 50% of the home section (made more responsive)
+            if (currentScrollY > homeSectionHeight * 0.5) {
+                if (!isScrollExpanded) {
+                    expandSidebar('scroll');
+                    // Add visual indicator for auto-expanded state
+                    sidebar.classList.add('auto-expanded');
+                }
+            } else {
+                // Collapse when back at top
+                if (isScrollExpanded) {
+                    collapseSidebar('scroll');
+                    // Remove visual indicator
+                    sidebar.classList.remove('auto-expanded');
+                }
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        function requestScrollUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateSidebarOnScroll);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestScrollUpdate);
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (isMobileDevice()) {
+                // Reset sidebar state on mobile
+                sidebar.classList.remove('expanded');
+                mainContent.classList.remove('shifted');
+                isScrollExpanded = false;
+                isHoverExpanded = false;
+            }
+        });
+
+        // Active section highlighting (works on all devices)
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    // Remove active class from all nav links
+                    sidebarNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+
+                    // Add active class to current section's nav link
+                    const activeLink = document.querySelector(`.sidebar .nav-link[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                        console.log('Active section:', sectionId);
+                    }
+                }
+            });
+        }
+
+        // Throttled scroll handler for active section
+        let activeNavTicking = false;
+        function requestActiveNavUpdate() {
+            if (!activeNavTicking) {
+                requestAnimationFrame(updateActiveNavLink);
+                activeNavTicking = true;
+                setTimeout(() => { activeNavTicking = false; }, 50);
+            }
+        }
+
+        window.addEventListener('scroll', requestActiveNavUpdate);
+
+        // Initial call to set active section
+        updateActiveNavLink();
+    } else if (sidebar) {
+        // On mobile, still handle active section highlighting
+        const sidebarNavLinks = document.querySelectorAll('.sidebar .nav-link');
+        
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    sidebarNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+
+                    const activeLink = document.querySelector(`.sidebar .nav-link[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        let activeNavTicking = false;
+        function requestActiveNavUpdate() {
+            if (!activeNavTicking) {
+                requestAnimationFrame(updateActiveNavLink);
+                activeNavTicking = true;
+                setTimeout(() => { activeNavTicking = false; }, 50);
+            }
+        }
+
+        window.addEventListener('scroll', requestActiveNavUpdate);
+        updateActiveNavLink();
     }
     
     // 2. SIMPLE THEME SWITCH
@@ -508,3 +681,95 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Simple initialization complete');
 });
+
+// Typing Animation Function
+function initTypingAnimation() {
+    const typingText = document.getElementById('typing-text');
+    const cursor = document.querySelector('.cursor');
+    
+    if (!typingText || !cursor) {
+        console.warn('Typing animation elements not found');
+        return;
+    }
+    
+    const texts = [
+        'Machine Learning Developer',
+        'Data Science Enthusiast', 
+        'Biomedical Engineering Student'
+    ];
+    
+    let currentIndex = 0;
+    let isTyping = false;
+    let isErasing = false;
+    
+    function typeText(text, callback) {
+        if (isTyping) return;
+        isTyping = true;
+        
+        let charIndex = 0;
+        typingText.textContent = '';
+        
+        // Add typing animation class
+        typingText.classList.add('typing');
+        
+        const typeInterval = setInterval(() => {
+            if (charIndex < text.length) {
+                typingText.textContent += text.charAt(charIndex);
+                charIndex++;
+            } else {
+                clearInterval(typeInterval);
+                typingText.classList.remove('typing');
+                isTyping = false;
+                
+                // Wait before starting to erase
+                setTimeout(() => {
+                    if (callback) callback();
+                }, 2000);
+            }
+        }, 100);
+    }
+    
+    function eraseText(callback) {
+        if (isErasing) return;
+        isErasing = true;
+        
+        const currentText = typingText.textContent;
+        let charIndex = currentText.length;
+        
+        // Add erasing animation class
+        typingText.classList.add('erasing');
+        
+        const eraseInterval = setInterval(() => {
+            if (charIndex > 0) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                clearInterval(eraseInterval);
+                typingText.classList.remove('erasing');
+                isErasing = false;
+                
+                if (callback) callback();
+            }
+        }, 50);
+    }
+    
+    function cycleTexts() {
+        const currentText = texts[currentIndex];
+        
+        typeText(currentText, () => {
+            eraseText(() => {
+                currentIndex = (currentIndex + 1) % texts.length;
+                
+                // Wait before typing next text
+                setTimeout(cycleTexts, 500);
+            });
+        });
+    }
+    
+    // Start the animation after a brief delay
+    setTimeout(() => {
+        cycleTexts();
+    }, 1000);
+    
+    console.log('Typing animation initialized');
+}
