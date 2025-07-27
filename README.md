@@ -8,6 +8,16 @@ Welcome to my personal portfolio website showcasing my journey as a **Biomedical
 
 ## 🚀 Featured Projects
 
+### 🏥 **AI Doctor - Vision & Voice Bot** (2025)
+Intelligent medical assistant that combines voice input, image analysis, and AI-powered medical insights using **Groq's LLaMA-4 Scout** model. Features voice-to-text, medical image analysis, and text-to-speech responses.
+
+**Tech Stack:** Python • Groq AI • LLaMA-4 • Gradio • Voice AI • Medical AI
+
+### 🎙️ **AI News Reporter** (2025)
+Intelligent news broadcasting system that analyzes social media discussions and generates professional audio news reports using AI. Combines social media analysis with text-to-speech technology for broadcast-quality news.
+
+**Tech Stack:** Python • FastAPI • Streamlit • Groq AI • Text-to-Speech • Social Media API
+
 ### 🤖 **Manim Math Animator Chatbot** (2025)
 AI-powered mathematical animation chatbot that transforms natural language prompts like *"animate sin(x)"* into stunning mathematical videos using **Manim** and **DeepSeek Coder**.
 
@@ -69,7 +79,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/shadmanrahman1)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shadmanrahman1)
 [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://kaggle.com/shadmanrahman1)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:officialshadmanrahman@gmail.com)
 
 ---
 
