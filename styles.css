@@ -2302,8 +2302,13 @@ button {
     line-height: 1.3;
 }
 
+/* Carousel controls: anchor inside the image column, not floating over proof cards */
 .balanced-hero .hero-controls {
-    bottom: 1.2rem;
+    position: absolute;
+    bottom: 0.85rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
 }
 
 @media (max-width: 980px) {
@@ -2384,9 +2389,10 @@ button {
 
 .balanced-hero .hero-content {
     display: grid;
-    grid-template-columns: minmax(0, 0.98fr) minmax(300px, 0.62fr);
+    /* 56% left text / 44% right image — balanced, not cramped */
+    grid-template-columns: minmax(0, 1.27fr) minmax(0, 1fr);
     align-items: center;
-    gap: clamp(1.3rem, 4vw, 3rem);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .balanced-hero .hero-content-panel {
@@ -2396,28 +2402,42 @@ button {
         rgba(5, 5, 5, 0.5);
 }
 
+/* Right column wrapper — image lives here, controls sit inside it */
+.hero-visual-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 520px;
+}
+
 .hero-visual-card {
     position: relative;
-    width: min(200px, 100%);
-    justify-self: end;
-    margin: 0;
+    /* Natural portrait size — wide enough to show the face properly */
+    width: clamp(220px, 38vw, 320px);
+    justify-self: center;
+    margin: 0 auto;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-left: 2px solid rgba(197, 22, 46, 0.5);
+    border-radius: 12px;
     background: rgba(17, 17, 20, 0.7);
     box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.52),
-        0 0 28px rgba(177, 18, 38, 0.18);
-    /* Subtle left fade so it doesn't have a harsh hard line */
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%);
-    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%);
+        0 20px 52px rgba(0, 0, 0, 0.52),
+        0 0 32px rgba(177, 18, 38, 0.15);
+    /* Gentle left fade — no harsh box edge */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.4) 8%, black 22%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.4) 8%, black 22%);
 }
 
 .hero-visual-card img {
     width: 100%;
-    aspect-ratio: 3 / 4;
+    /* 4:5 shows face + shoulders naturally — not over-cropped */
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: center top;
+    /* 50% horizontal, slight top bias so face is fully visible */
+    object-position: 50% 18%;
     filter: saturate(0.92) contrast(1.06) brightness(0.88);
 }
 
@@ -2666,48 +2686,50 @@ button {
     }
 }
 
-/* Desktop-only: tighten balanced-hero first slide so it fits viewport height like other slides. Mobile is unaffected (visual card is already hidden below 980px). */
+/* Desktop-only hero polish — no height clipping, natural scroll allowed */
 @media (min-width: 981px) {
-    .balanced-hero .hero-content {
-        padding-top: calc(var(--header-height) + 1rem);
-        padding-bottom: 4.5rem;
-        min-height: unset;
-        height: 100svh;
-        max-height: 100svh;
-        overflow: hidden;
+    .balanced-hero {
+        /* Let content define the height — do NOT hard-lock to 100svh */
+        min-height: 100svh;
+        max-height: none;
+        overflow: visible;
     }
 
-    .balanced-hero {
-        min-height: 100svh;
-        max-height: 100svh;
-        overflow: hidden;
+    .balanced-hero .hero-content {
+        /* Comfortable padding, no overflow:hidden cutting the proof cards */
+        padding-top: calc(var(--header-height) + 1.5rem);
+        padding-bottom: 5rem;
+        min-height: unset;
+        height: auto;
+        max-height: none;
+        overflow: visible;
     }
 
     .balanced-hero h1 {
-        font-size: clamp(3rem, 6.2vw, 6rem);
+        font-size: clamp(3rem, 5.8vw, 6.2rem);
     }
 
     .balanced-hero h2 {
-        font-size: clamp(1.3rem, 2.4vw, 2.2rem);
+        font-size: clamp(1.3rem, 2.2vw, 2.1rem);
     }
 
     .balanced-hero .hero-copy {
-        font-size: clamp(0.92rem, 1.2vw, 1.08rem);
-        margin-top: 0.9rem;
+        font-size: clamp(0.94rem, 1.25vw, 1.1rem);
+        margin-top: 1rem;
     }
 
     .hero-info-grid {
-        margin-top: 0.75rem;
-        gap: 0.5rem;
+        margin-top: 1rem;
+        gap: 0.55rem;
     }
 
     .hero-info-grid article {
-        min-height: 76px;
-        padding: 0.6rem 0.75rem;
+        min-height: 80px;
+        padding: 0.65rem 0.8rem;
     }
 
     .hero-actions {
-        margin-top: 1.2rem;
+        margin-top: 1.4rem;
     }
 }
 
