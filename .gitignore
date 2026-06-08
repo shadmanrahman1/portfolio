@@ -1,6 +1,9 @@
 # Reference folder - contains project source files and documentation
 Reference/
 
+# Raw source photos copied into curated assets/images folders
+new pic/
+
 # Personal/sensitive files (if any are added later)
 personal/
 private/

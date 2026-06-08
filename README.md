@@ -1,94 +1,79 @@
-# 🎯 Shadman Rahman - Portfolio Website
+# Shadman Rahman Portfolio
 
-Welcome to my personal portfolio website showcasing my journey as a **Biomedical Engineering** student specializing in **Data Science**, **Machine Learning**, and **AI-powered solutions**.
+Formal cinematic engineering portfolio for Shadman Rahman, positioned around Biomedical AI Engineering, AI/ML development, machine learning, deep learning, computer vision, MLOps, production LLM applications, automation workflows, and applied biomedical systems.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Portfolio-00FFFF?style=for-the-badge&logo=github-pages)](https://shadmanrahman1.github.io/portfolio)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/shadmanrahman1/portfolio?style=for-the-badge)](https://github.com/shadmanrahman1/portfolio/stargazers)
+Live domain: https://shadmanrahman.dev
 
-## 🚀 Featured Projects
+## Current Stack
 
-### 🏥 **AI Doctor - Vision & Voice Bot** (2025)
-Intelligent medical assistant that combines voice input, image analysis, and AI-powered medical insights using **Groq's LLaMA-4 Scout** model. Features voice-to-text, medical image analysis, and text-to-speech responses.
+- Static HTML
+- CSS
+- Vanilla JavaScript
+- Font Awesome icons via CDN
+- Google Fonts via CDN
 
-**Tech Stack:** Python • Groq AI • LLaMA-4 • Gradio • Voice AI • Medical AI
+No package manager or build step is required for the current version.
 
-### 🎙️ **AI News Reporter** (2025)
-Intelligent news broadcasting system that analyzes social media discussions and generates professional audio news reports using AI. Combines social media analysis with text-to-speech technology for broadcast-quality news.
+## Local Preview
 
-**Tech Stack:** Python • FastAPI • Streamlit • Groq AI • Text-to-Speech • Social Media API
+From the project folder:
 
-### 🤖 **Manim Math Animator Chatbot** (2025)
-AI-powered mathematical animation chatbot that transforms natural language prompts like *"animate sin(x)"* into stunning mathematical videos using **Manim** and **DeepSeek Coder**.
+```powershell
+python -m http.server 8000 --bind 127.0.0.1
+```
 
-**Tech Stack:** Python • Manim • DeepSeek Coder • AI/LLM Integration • Video Generation
+Then open:
 
-### 🩺 **Biomed RAG Chatbot**
-Intelligent chatbot system designed for biomedical inquiries, utilizing advanced NLP to provide accurate medical information and assistance.
+```text
+http://127.0.0.1:8000/
+```
 
-**Tech Stack:** Python • Natural Language Processing • Streamlit • RAG Architecture
+## Main Sections
 
-### 📊 **Disease Prediction System**
-Machine learning-based system that predicts diseases based on symptoms and patient data, assisting in early diagnosis and medical decision-making.
+- Hero carousel
+- About
+- Featured Systems
+- Older Projects / Experiments
+- Build Proof gallery
+- Grouped Skills
+- Experience & Leadership
+- Research & RA Fit
+- Education
+- Achievements
+- Contact
 
-**Tech Stack:** Python • Scikit-learn • Machine Learning • Healthcare Analytics
+## Featured Systems
 
-## 🛠️ Tech Stack
+- SmartCPET - Portable AI Cardiopulmonary Exercise Testing System
+- Second Brain - Self-hosted AI Workspace
+- VisDrone Tracking - Aerial Object Detection & Tracking
+- E-commerce Automation System Bots
+- Biomed RAG Chatbot
+- Manim Math Animator Chatbot
 
-### **Programming Languages**
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![MATLAB](https://img.shields.io/badge/MATLAB-0076A8?style=flat-square&logo=mathworks&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+## Asset Organization
 
-### **Data Science & ML**
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=flat-square)
+Important image assets are organized under:
 
-### **AI & Modern ML**
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-FFD21E?style=flat-square)
-![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=flat-square)
+```text
+assets/images/portraits/
+assets/images/projects/
+assets/images/achievements/
+assets/images/backgrounds/
+```
 
-### **Tools & Frameworks**
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=power-bi&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
+The `new pic/` folder contains source images that were copied into stable asset names for the redesigned site.
 
-## 🎓 Education & Certifications
+## Notes Before Publishing
 
-- **BSc in Biomedical Engineering** - Khulna University of Engineering & Technology (KUET) | 2023-Present
-- **Machine Learning Specialization** - Stanford University & Coursera
-- **Neural Networks & Deep Learning** - DeepLearning.AI
-- **IBM Machine Learning Professional Certificate** - IBM SkillsBuild
-- **Data Analysis with Python** - IBM
-- **Advanced Learning Algorithms** - Stanford & Coursera
+- Confirm the final LinkedIn URL. The redesigned site uses `linkedin.com/in/shadman-rahman-offical17/`.
+- Confirm exact GitHub/demo links for each featured system before adding project-specific buttons.
+- The Calibration 2.0 achievement is written according to the visible proof image: `1st Runner Up - Poster Presentation`.
+- Add more SmartCPET hardware images when available for the full case-study gallery.
 
-## 📄 License
+## Contact
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📬 Connect With Me
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/shadmanrahman1)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shadmanrahman1)
-[![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://kaggle.com/shadmanrahman1)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:officialshadmanrahman@gmail.com)
-
----
-
-<div align="center">
-
-**⭐ Star this repository if you found it helpful!**
-
-Made with ❤️ by [Shadman Rahman](https://github.com/shadmanrahman1)
-
-*"Bridging the gap between technology and healthcare through innovative AI solutions"*
-
-</div>
+- Email: officialshadmanrahman@gmail.com
+- GitHub: https://github.com/shadmanrahman1
+- LinkedIn: https://www.linkedin.com/in/shadman-rahman-offical17/
+- Kaggle: https://www.kaggle.com/shadmanrahman1
