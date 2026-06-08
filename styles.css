@@ -279,6 +279,8 @@ button {
     visibility: visible;
     transform: scale(1);
     position: relative;
+    /* Every active slide must fill the full viewport */
+    min-height: 100svh;
 }
 
 .hero-slide.is-active::before {
@@ -2251,8 +2253,10 @@ button {
     grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
     align-items: center;
     gap: clamp(1.5rem, 3vw, 2.5rem);
+    /* Must fill full viewport for every slide */
+    min-height: 100svh;
     padding-top: calc(var(--header-height) + 2.5rem);
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
 }
 
 /* Text panel */
