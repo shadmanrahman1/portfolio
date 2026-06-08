@@ -2247,19 +2247,8 @@ button {
         linear-gradient(0deg, rgba(5,5,5,0.94), rgba(5,5,5,0.14) 54%, rgba(5,5,5,0.42));
 }
 
-/* ── Slide 1 ONLY: two-column grid (left text / right portrait card) ── */
-.balanced-hero .hero-slide:first-child .hero-content {
-    display: grid;
-    grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-    /* Override the base padding so content sits centred in viewport */
-    padding-top: calc(var(--header-height) + 1.5rem);
-    padding-bottom: 3rem;
-}
-
-/* Slides 2–5: restore original single-column centred layout (untouched) */
-.balanced-hero .hero-slide:not(:first-child) .hero-content {
+/* All slides: restore original single-column centred layout (untouched visual) */
+.balanced-hero .hero-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2336,11 +2325,10 @@ button {
     line-height: 1.3;
 }
 
-/* Portrait card — sits as right grid column child */
+/* Portrait card — only visible on slide 1 (other slides use the bg image as their visual) */
 .hero-visual-card {
     position: relative;
-    /* Wider and compact — 300px wide, 16:9 keeps height ~169px (≈50% of old 320px) */
-    width: min(300px, 100%);
+    width: min(320px, 100%);
     justify-self: center;
     margin: 0 auto;
     overflow: hidden;
@@ -2353,13 +2341,18 @@ button {
         0 0 28px rgba(177,18,38,0.14);
 }
 
+/* Hide portrait card completely from all slides */
+.balanced-hero .hero-visual-card {
+    display: none !important;
+}
+
 .hero-visual-card img {
     width: 100%;
-    /* 3:4 portrait — shows face and shoulders naturally */
-    aspect-ratio: 3 / 4;
+    /* Compact landscape rectangle */
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    /* Centered slightly high so the full face is in frame */
-    object-position: 50% 18%;
+    /* Focus on the face */
+    object-position: 50% 20%;
     filter: saturate(0.92) contrast(1.06) brightness(0.88);
 }
 
