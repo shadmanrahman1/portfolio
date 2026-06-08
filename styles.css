@@ -2225,52 +2225,74 @@ button {
     }
 }
 
-/* Balanced hero: cinematic background slider with readable academic overlay. */
+/* ─── Balanced hero: two-column layout, cinematic background, framed portrait ─── */
+
 .balanced-hero {
+    --hero-image-opacity: 0.62;
+    --hero-overlay-dark: 0.72;
+    --hero-panel-opacity: 0.78;
     min-height: 100svh;
     background: var(--bg);
 }
 
+.balanced-hero .hero-slide::before {
+    opacity: var(--hero-image-opacity);
+}
+
 .balanced-hero .hero-slide::after {
     background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.67) 47%, rgba(5, 5, 5, 0.42) 73%, rgba(5, 5, 5, 0.78)),
-        linear-gradient(0deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.16) 54%, rgba(5, 5, 5, 0.35));
+        linear-gradient(90deg, rgba(5,5,5,0.94), rgba(5,5,5,0.72) 42%, rgba(5,5,5,0.44) 68%, rgba(5,5,5,0.82)),
+        linear-gradient(0deg, rgba(5,5,5,0.94), rgba(5,5,5,0.14) 54%, rgba(5,5,5,0.42));
 }
 
+/* Two-column grid: 58% text / 42% image card */
 .balanced-hero .hero-content {
-    justify-content: center;
-    padding-top: calc(var(--header-height) + 2rem);
-    padding-bottom: 6.5rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 6rem;
 }
 
+/* Text panel */
 .hero-content-panel {
-    width: min(820px, 100%);
+    width: 100%;
     padding: clamp(1.1rem, 2.5vw, 1.7rem);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-left: 3px solid rgba(197, 22, 46, 0.85);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 3px solid rgba(197,22,46,0.85);
     border-radius: var(--radius);
     background:
-        linear-gradient(135deg, rgba(17, 17, 20, 0.78), rgba(5, 5, 5, 0.54)),
-        rgba(5, 5, 5, 0.62);
-    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+        linear-gradient(135deg, rgba(17,17,20,0.78), rgba(5,5,5,0.54)),
+        rgba(5,5,5,0.62);
+    box-shadow: 0 26px 70px rgba(0,0,0,0.42);
     backdrop-filter: blur(10px);
 }
 
+.balanced-hero .hero-content-panel {
+    background:
+        linear-gradient(135deg, rgba(17,17,20,var(--hero-panel-opacity)), rgba(5,5,5,0.66)),
+        rgba(5,5,5,0.5);
+}
+
+/* Typography */
 .balanced-hero h1 {
-    font-size: clamp(3.6rem, 8vw, 7.4rem);
+    font-size: clamp(3rem, 5.5vw, 6rem);
 }
 
 .balanced-hero h2 {
     font-family: "Inter", system-ui, sans-serif;
-    font-size: clamp(1.55rem, 3vw, 2.85rem);
-    line-height: 1.08;
-    font-weight: 850;
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
+    line-height: 1.1;
+    font-weight: 800;
 }
 
 .balanced-hero .hero-copy {
-    font-size: clamp(1rem, 1.45vw, 1.18rem);
+    font-size: clamp(0.94rem, 1.3vw, 1.1rem);
+    margin-top: 1rem;
 }
 
+/* Info stat cards row */
 .hero-info-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2279,11 +2301,11 @@ button {
 }
 
 .hero-info-grid article {
-    min-height: 92px;
+    min-height: 82px;
     padding: 0.75rem;
     border: 1px solid var(--border);
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.045);
+    background: rgba(255,255,255,0.045);
 }
 
 .hero-info-grid span {
@@ -2298,146 +2320,34 @@ button {
     display: block;
     margin-top: 0.22rem;
     color: var(--text);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.3;
 }
 
-/* Carousel controls: anchor inside the image column, not floating over proof cards */
-.balanced-hero .hero-controls {
-    position: absolute;
-    bottom: 0.85rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4;
-}
-
-@media (max-width: 980px) {
-    .hero-info-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 720px) {
-    .balanced-hero .hero-content {
-        width: calc(100vw - 1.25rem);
-        max-width: calc(100vw - 1.25rem);
-        padding-top: calc(var(--header-height) + 1.7rem);
-    }
-
-    .hero-content-panel {
-        width: min(100%, 336px);
-        max-width: calc(100vw - 1.25rem);
-        padding: 0.95rem;
-        backdrop-filter: blur(7px);
-    }
-
-    .balanced-hero h1 {
-        font-size: clamp(2.7rem, 14vw, 4rem);
-    }
-
-    .balanced-hero h2 {
-        font-size: clamp(1.05rem, 4.9vw, 1.34rem);
-        line-height: 1.18;
-    }
-
-    .hero-info-grid strong,
-    .balanced-hero .hero-copy {
-        overflow-wrap: anywhere;
-    }
-
-    .balanced-hero .hero-copy {
-        font-size: 0.98rem;
-    }
-
-    .proof-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .proof-card {
-        min-height: 330px;
-    }
-
-    .proof-card img {
-        min-height: 330px;
-    }
-
-    .hero-info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-info-grid article {
-        min-height: auto;
-    }
-}
-
-/* Final hero composition: left readable description, right proof image, shared cinematic background. */
-.balanced-hero {
-    --hero-image-opacity: 0.62;
-    --hero-overlay-dark: 0.72;
-    --hero-panel-opacity: 0.78;
-}
-
-.balanced-hero .hero-slide::before {
-    opacity: var(--hero-image-opacity);
-}
-
-.balanced-hero .hero-slide::after {
-    background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.94), rgba(5, 5, 5, var(--hero-overlay-dark)) 42%, rgba(5, 5, 5, 0.44) 68%, rgba(5, 5, 5, 0.82)),
-        linear-gradient(0deg, rgba(5, 5, 5, 0.94), rgba(5, 5, 5, 0.14) 54%, rgba(5, 5, 5, 0.42));
-}
-
-.balanced-hero .hero-content {
-    display: grid;
-    /* 56% left text / 44% right image — balanced, not cramped */
-    grid-template-columns: minmax(0, 1.27fr) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-}
-
-.balanced-hero .hero-content-panel {
-    width: 100%;
-    background:
-        linear-gradient(135deg, rgba(17, 17, 20, var(--hero-panel-opacity)), rgba(5, 5, 5, 0.66)),
-        rgba(5, 5, 5, 0.5);
-}
-
-/* Right column wrapper — image lives here, controls sit inside it */
-.hero-visual-col {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    min-height: 520px;
-}
-
+/* Portrait card — sits as right grid column child */
 .hero-visual-card {
     position: relative;
-    /* Natural portrait size — wide enough to show the face properly */
-    width: clamp(220px, 38vw, 320px);
+    /* Constrained width — fills the right column up to 240px */
+    width: min(240px, 100%);
     justify-self: center;
     margin: 0 auto;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    border-left: 2px solid rgba(197, 22, 46, 0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-left: 2px solid rgba(197,22,46,0.45);
     border-radius: 12px;
-    background: rgba(17, 17, 20, 0.7);
+    background: var(--surface);
     box-shadow:
-        0 20px 52px rgba(0, 0, 0, 0.52),
-        0 0 32px rgba(177, 18, 38, 0.15);
-    /* Gentle left fade — no harsh box edge */
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.4) 8%, black 22%);
-    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.4) 8%, black 22%);
+        0 20px 52px rgba(0,0,0,0.5),
+        0 0 32px rgba(177,18,38,0.14);
 }
 
 .hero-visual-card img {
     width: 100%;
-    /* 4:5 shows face + shoulders naturally — not over-cropped */
-    aspect-ratio: 4 / 5;
+    /* 3:4 portrait — shows face & shoulders comfortably */
+    aspect-ratio: 3 / 4;
     object-fit: cover;
-    /* 50% horizontal, slight top bias so face is fully visible */
-    object-position: 50% 18%;
+    /* Slightly above center so the full face is visible */
+    object-position: center 15%;
     filter: saturate(0.92) contrast(1.06) brightness(0.88);
 }
 
@@ -2446,7 +2356,7 @@ button {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(180deg, rgba(5, 5, 5, 0) 58%, rgba(5, 5, 5, 0.72));
+    background: linear-gradient(180deg, transparent 55%, rgba(5,5,5,0.75));
 }
 
 .hero-visual-card figcaption {
@@ -2460,6 +2370,7 @@ button {
     line-height: 1.35;
 }
 
+/* ≤ 980px: stack to single column, hide the card */
 @media (max-width: 980px) {
     .balanced-hero .hero-content {
         grid-template-columns: 1fr;
@@ -2468,8 +2379,13 @@ button {
     .hero-visual-card {
         display: none;
     }
+
+    .hero-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
+/* ≤ 720px: full mobile layout */
 @media (max-width: 720px) {
     .balanced-hero {
         --hero-image-opacity: 0.48;
@@ -2479,6 +2395,45 @@ button {
 
     .balanced-hero .hero-content {
         display: flex;
+        flex-direction: column;
+        width: min(100%, calc(100vw - 1.5rem));
+        max-width: calc(100vw - 1.5rem);
+        margin-inline: auto;
+        padding-inline: 0;
+        padding-top: calc(var(--header-height) + 1.5rem);
+        padding-bottom: 5rem;
+    }
+
+    .hero-content-panel {
+        width: 100%;
+        max-width: 100%;
+        padding: 0.95rem;
+    }
+
+    .balanced-hero h1 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+    }
+
+    .balanced-hero h2 {
+        font-size: clamp(1.05rem, 4.9vw, 1.34rem);
+        line-height: 1.18;
+    }
+
+    .balanced-hero .hero-copy {
+        font-size: 0.98rem;
+    }
+
+    .hero-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-info-grid article {
+        min-height: auto;
+    }
+
+    .hero-info-grid strong,
+    .balanced-hero .hero-copy {
+        overflow-wrap: anywhere;
     }
 }
 
@@ -2686,52 +2641,6 @@ button {
     }
 }
 
-/* Desktop-only hero polish — no height clipping, natural scroll allowed */
-@media (min-width: 981px) {
-    .balanced-hero {
-        /* Let content define the height — do NOT hard-lock to 100svh */
-        min-height: 100svh;
-        max-height: none;
-        overflow: visible;
-    }
-
-    .balanced-hero .hero-content {
-        /* Comfortable padding, no overflow:hidden cutting the proof cards */
-        padding-top: calc(var(--header-height) + 1.5rem);
-        padding-bottom: 5rem;
-        min-height: unset;
-        height: auto;
-        max-height: none;
-        overflow: visible;
-    }
-
-    .balanced-hero h1 {
-        font-size: clamp(3rem, 5.8vw, 6.2rem);
-    }
-
-    .balanced-hero h2 {
-        font-size: clamp(1.3rem, 2.2vw, 2.1rem);
-    }
-
-    .balanced-hero .hero-copy {
-        font-size: clamp(0.94rem, 1.25vw, 1.1rem);
-        margin-top: 1rem;
-    }
-
-    .hero-info-grid {
-        margin-top: 1rem;
-        gap: 0.55rem;
-    }
-
-    .hero-info-grid article {
-        min-height: 80px;
-        padding: 0.65rem 0.8rem;
-    }
-
-    .hero-actions {
-        margin-top: 1.4rem;
-    }
-}
 
 /* Final contact mobile pass: stack text and image instead of squeezing columns. */
 @media (max-width: 720px) {
