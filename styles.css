@@ -2327,27 +2327,27 @@ button {
 /* Portrait card — sits as right grid column child */
 .hero-visual-card {
     position: relative;
-    /* Constrained width — fills the right column up to 240px */
-    width: min(240px, 100%);
+    /* Wider and compact — 300px wide, 16:9 keeps height ~169px (≈50% of old 320px) */
+    width: min(300px, 100%);
     justify-self: center;
     margin: 0 auto;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.15);
     border-left: 2px solid rgba(197,22,46,0.45);
-    border-radius: 12px;
+    border-radius: 10px;
     background: var(--surface);
     box-shadow:
-        0 20px 52px rgba(0,0,0,0.5),
-        0 0 32px rgba(177,18,38,0.14);
+        0 16px 40px rgba(0,0,0,0.5),
+        0 0 28px rgba(177,18,38,0.14);
 }
 
 .hero-visual-card img {
     width: 100%;
-    /* 3:4 portrait — shows face & shoulders comfortably */
-    aspect-ratio: 3 / 4;
+    /* 16:9 = compact landscape crop ≈ 169px tall at 300px width */
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    /* Slightly above center so the full face is visible */
-    object-position: center 15%;
+    /* Push slightly into the face area so it shows clearly */
+    object-position: 50% 22%;
     filter: saturate(0.92) contrast(1.06) brightness(0.88);
 }
 
