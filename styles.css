@@ -2398,24 +2398,27 @@ button {
 
 .hero-visual-card {
     position: relative;
-    width: min(430px, 100%);
+    width: min(200px, 100%);
     justify-self: end;
     margin: 0;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: var(--radius);
+    border-radius: 10px;
     background: rgba(17, 17, 20, 0.7);
     box-shadow:
-        0 28px 70px rgba(0, 0, 0, 0.46),
-        0 0 52px rgba(177, 18, 38, 0.12);
+        0 16px 40px rgba(0, 0, 0, 0.52),
+        0 0 28px rgba(177, 18, 38, 0.18);
+    /* Subtle left fade so it doesn't have a harsh hard line */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%);
 }
 
 .hero-visual-card img {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
-    object-position: center;
-    filter: saturate(0.92) contrast(1.06) brightness(0.9);
+    object-position: center top;
+    filter: saturate(0.92) contrast(1.06) brightness(0.88);
 }
 
 .hero-visual-card::after {
@@ -2423,17 +2426,17 @@ button {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(180deg, rgba(5, 5, 5, 0) 52%, rgba(5, 5, 5, 0.78));
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0) 58%, rgba(5, 5, 5, 0.72));
 }
 
 .hero-visual-card figcaption {
     position: absolute;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
     z-index: 1;
     color: var(--text-soft);
-    font-size: 0.88rem;
+    font-size: 0.76rem;
     line-height: 1.35;
 }
 
@@ -2705,14 +2708,6 @@ button {
 
     .hero-actions {
         margin-top: 1.2rem;
-    }
-
-    .hero-visual-card {
-        width: min(340px, 100%);
-    }
-
-    .hero-visual-card img {
-        aspect-ratio: 3 / 4;
     }
 }
 
