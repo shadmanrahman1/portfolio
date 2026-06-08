@@ -73,7 +73,7 @@ The `new pic/` folder contains source images that were copied into stable asset 
 
 ## Contact
 
-- Email: officialshadmanrahman@gmail.com
+- Email: official.shadmanrahman@gmail.com
 - GitHub: https://github.com/shadmanrahman1
 - LinkedIn: https://www.linkedin.com/in/shadman-rahman-offical17/
 - Kaggle: https://www.kaggle.com/shadmanrahman1

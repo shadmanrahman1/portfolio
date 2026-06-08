@@ -19,7 +19,7 @@
             ],
             links: [
                 ["GitHub profile", "https://github.com/shadmanrahman1"],
-                ["Contact for details", "mailto:officialshadmanrahman@gmail.com"]
+                ["Contact for details", "mailto:official.shadmanrahman@gmail.com"]
             ]
         },
         "second-brain": {
@@ -39,7 +39,7 @@
             ],
             links: [
                 ["GitHub profile", "https://github.com/shadmanrahman1"],
-                ["Contact for details", "mailto:officialshadmanrahman@gmail.com"]
+                ["Contact for details", "mailto:official.shadmanrahman@gmail.com"]
             ]
         },
         "visdrone": {
@@ -77,7 +77,7 @@
                 ["Next steps", "Add sanitized workflow diagrams, publish a demo flow, and connect exact deployment notes without exposing private business data."]
             ],
             links: [
-                ["Contact for details", "mailto:officialshadmanrahman@gmail.com"]
+                ["Contact for details", "mailto:official.shadmanrahman@gmail.com"]
             ]
         },
         "biomed-rag": {
